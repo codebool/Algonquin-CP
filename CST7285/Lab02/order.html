@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Bo Qu">
+    <title>Order Form</title>
+
+    <style>
+        .input-group {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 5px;
+        }
+        .input-group label {
+            width: 100px; /* Adjust this value to suit your needs */
+        }
+        .input-group input {
+            width: 300px; /* Adjust this value to suit your needs */
+        }
+        table, tr, th, td {
+            border: 1px solid black;
+        }
+        .container {
+                display: flex;
+            }
+        .container div {
+            margin-right: 20px; /* Optional: Adds some space between the divs */
+        }
+        .delivery {
+            display: flex;
+            align-items: flex-start;
+        }
+        .delivery label {
+            align-self: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div style="border-style: solid">
+    <h3 style="color: orange">Order Form</h3>
+    <form>
+        <fieldset>
+            <legend>Basic Information</legend>
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="Bo" disabled>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="qu000030@algonquinlive.com" required>
+            </div>
+            <div class="input-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="5" cols="25" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="postalcode">Postalcode:</label>    
+                <input type="text" id="postalcode" name="postalcode" value="" style="width: 150px;" required>    
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Product Information</legend>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Part Number</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Subtotal</th>
+                </tr>
+                <tr>
+                    <td>Box</td>
+                    <td>AC100</td>
+                    <td></td>
+                    <td>$5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Coffee Table</td>
+                    <td>AC200</td>
+                    <td></td>
+                    <td>$100</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Chair</td>
+                    <td>AC300</td>
+                    <td></td>
+                    <td>$150</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Desk</td>
+                    <td>AC400</td>
+                    <td></td>
+                    <td>$120</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Computer Table</td>
+                    <td>AC500</td>
+                    <td></td>
+                    <td>$130</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;" colspan="4">Total:</td>
+                    <td></td>
+                </tr>
+            </table>
+        </fieldset>
+        <br>
+        <h3>Credit Card Information</h3>
+
+        <div class="container">
+            <div>
+                <label>Card Type:</label>
+                <div id="cardtype">
+                    <input type="radio" id="mastercard" name="cardtype" value="mastercard">
+                    <label for="mastercard">Mastercard</label><br>
+                    <input type="radio" id="visa" name="cardtype" value="visa">
+                    <label for="visa">Visa</label><br>
+                    <input type="radio" id="gc" name="cardtype" value="gc">
+                    <label for="gc">Gift Card</label><br>
+                </div>
+            </div>
+            <div>
+                <label for="cardnumber">Card Number:</label>
+                <input type="text" id="cardnumber" name="cardnumber" value="" required>
+                <br>
+                <br>
+                <label for="expiredate">Expiry Date:</label>
+                <input type="date" id="expiredate" name="expiredate" value="" required>
+            </div>
+        </div>
+        <div class="delivery">
+            <label for="address">Delivery Address:</label>
+            <textarea id="delivery-address" name="address" rows="5" cols="25" required></textarea>
+        </div>
+        <br>
+        <button type="submit">Send Order</button>
+        <button type="reset">Clear Form</button>
+        <br>
+        <br>
+    </form>
+    </div>
+</body>
+</html>
