@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
+// class to store the country code and country name
 public class CountryCodeName {
     // 2D array to store country code and country name
     private String[][] countryData = new String[250][2];
