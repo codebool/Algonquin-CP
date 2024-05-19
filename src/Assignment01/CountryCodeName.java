@@ -3,7 +3,7 @@
  * Lab Professor: Travis Lothar Czech
  * Due Date: 2024-05-18
  * Modified: 2024-05-19
- * Description: Lab assignment 01
+ * Description: Assignment 01
  */
 
 package Assignment01;
