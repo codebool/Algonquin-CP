@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Bo Qu" name="author">
-    <title>CSS for Web Development</title>
+    <title>Lab 03</title>
     <link href="lab3.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header class="header">
     <div id="section-4">
-        CSS For Web Development
+        <h1>CSS For Web Development</h1>
     </div>
     <div class="nav">
-        <a onclick="location.href='#section-1'">How a Style Sheet Works</a>
-        <a onclick="location.href='#section-2'">The Order of the Cascade</a>
-        <a onclick="location.href='#section-3'">The Anatomy of the Selector</a>
+        <nav>
+            <a class="nav-button" href="#section-1"><button>How a Style Sheet Works</button></a>
+            <a class="nav-button" href="#section-2"><button>The Order of the Cascade</button></a>
+            <a class="nav-button" href="#section-3"><button>The Anatomy of the Selector</button></a>
+        </nav>
     </div>
 </header>
 
@@ -65,16 +67,16 @@
             a style rule and it seems to make no change to your webpage, something with a greater
             priority has applied its rule first.</p>
         <ul>
-            <li><strong>Origin and Importance</strong><br>Origin has to do with where the style rule originates. This
+            <li><strong>Origin and Importance</strong><p>Origin has to do with where the style rule originates. This
                 allows the browsers and even the end user to make design decisions based on their needs, which is
                 helpful for greater accessibility in web browsing. You can include an important operator (!) to a style
                 rule to override the origin priority. Note that all browsers have default style rules which have the
                 lowest priority at this level unless they are given an important operator (!) which will give them the
-                highest priority.
+                highest priority.</p>
             </li>
-            <li><strong>Specificity of the Selector</strong><br>Selector specificity has to do with how specific our
+            <li><strong>Specificity of the Selector</strong><p>Selector specificity has to do with how specific our
                 selector is. A selector on a generic HTML tag has the lowest priority here. The order of preference for
-                selector specificity is:
+                selector specificity is:</p>
                 <ol>
                     <li>Inline style rules that are part of the HTML tag (style= attribute). These are the most specific
                         because they only apply to the element to which they are attached.
@@ -95,19 +97,19 @@
                     </li>
                 </ol>
             </li>
-            <li><strong>Oder of Appearance</strong><br>The order in which you include your CSS style sheets is really
+            <li id="after-unordered"><strong>Oder of Appearance</strong><p>The order in which you include your CSS style sheets is really
                 important. The rule is
                 that the last declaration, closest to the element selected, wins the war of styles. This
                 is why inline CSS is discouraged, as it is always going to override other style declarations
                 and if you need to make a change inline declarations are the hardest to locate. Also if you
                 are to employ a CSS reset, to clear out unwanted CSS declarations, always include that link
-                before your custom CSS link or you will simply reset all the work you have done.
+                before your custom CSS link or you will simply reset all the work you have done.</p>
             </li>
-            <li><strong>Inheritance</strong><br>Inheritance in CSS has to do with the fact that elements are often
+            <li><strong>Inheritance</strong><p>Inheritance in CSS has to do with the fact that elements are often
                 nested within other
                 elements. We call the elements inside children of the parent elements. A child can often
                 inherit style rules from its parent, although this is of lowest priority so CSS allows
-                you to force this by setting a style rule to the value inherit.
+                you to force this by setting a style rule to the value inherit.</p>
             </li>
         </ul>
     </div>
@@ -128,7 +130,7 @@
 </div>
 <footer>
     <div class="nav">
-        <a onclick="location.href='#section-4'"> Top of Article</a>
+        <a class="nav-button" href="#section-4"><button>Top of Article</button></a>
     </div>
     
     <p>Text by Frank Emanuel. Formatting and code by Bo Qu.</p>
