@@ -22,15 +22,11 @@ body {
 
 .nav a {
     text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit color from parent element */
+    color: #333333; /* Inherit color from parent element */
     background-color: #D3D3D3;
 }
 
-.nav a:hover {
-    color: #8B635C; /* Change color on hover */
-}
-
-.nav-button button{
+.nav-button {
     display: inline-block;
     padding: 5px 7px;
     border-radius: 5px; /* This makes the edges rounded */
@@ -38,12 +34,12 @@ body {
     font-size: 12pt;
 }
 
-.nav-button button {
+.nav-button {
     color: #000000; /* Black color for text */
     background-color: inherit; /* Inherit background color from parent element */
 }
 
-.nav-button button:hover {
+.nav-button:hover {
     background-color: #8B635C;
 }
 
