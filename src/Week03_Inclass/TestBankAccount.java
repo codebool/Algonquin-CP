@@ -9,6 +9,7 @@
 package Week03_Inclass;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 import static java.math.BigDecimal.ONE;
 import static java.math.BigDecimal.TEN;
@@ -32,5 +33,13 @@ public class TestBankAccount {
         // Creating a Checking Account with no initial balance
         BankAccount checkingAccount = new BankAccount("67890", "Jane Smith", AccountType.CHECKING);
         System.out.println("Initial balance of checking account: " + checkingAccount.getBalance());
+
+        // Using ArrayList to store BankAccount objects
+        ArrayList<BankAccount> accounts = new ArrayList<>();
+        accounts.add(savingAccount);
+        accounts.add(checkingAccount);
+        for (BankAccount account : accounts) {
+            System.out.println(account.getAccountHolderName() + " has a " + account.getAccountType().getDescription() + " with account number " + account.getAccountNumber() + " and a balance of " + account.getBalance());
+        }
     }
 }
