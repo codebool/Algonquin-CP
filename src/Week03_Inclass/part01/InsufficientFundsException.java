@@ -6,7 +6,7 @@
  * Description: Lab assignment
  */
 
-package Week03_Inclass;
+package Week03_Inclass.part01;
 
 public class InsufficientFundsException extends Exception{
     public InsufficientFundsException(String message) {

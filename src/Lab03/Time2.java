@@ -1,4 +1,3 @@
-package Lab03; 
 /**
  * Student Name: Bo Qu
  * Lab Professor: Travis Lothar Czech
@@ -6,6 +5,8 @@ package Lab03;
  * Modified: 2024-05-23
  * Description: Lab assignment 3
  */
+
+package Lab03;
 
 public class Time2 {
     private int hour; // 0 - 23
