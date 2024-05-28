@@ -15,7 +15,7 @@ public class TestBasePlusCommisionmployee {
                 "Bo", "Qu", "123-456-7890", 4200, .12, 700);
 
         // get base-salaried commission employee data
-        System.out.println("Employee information obtained by get methods:");
+        System.out.println("Employee information obtained by default:");
         System.out.printf("%n%s %s%n", "First name is", employee.getFirstName());
         System.out.printf("%s %s%n", "Last name is", employee.getLastName());
         System.out.printf("%s %s%n", "Social security number is", employee.getSocialSecurityNumber());
@@ -23,8 +23,8 @@ public class TestBasePlusCommisionmployee {
         System.out.printf("%s %.2f%n", "Commission rate is", employee.getCommissionRate());
         System.out.printf("%s %.2f%n", "Base salary is", employee.getBaseSalary());
 
-        employee.setBaseSalary(1000); // set base salary
+        employee.setBaseSalary(1200); // set base salary
 
-        System.out.printf("%n%s:%n%n%s%n", "Updated employee information obtained by toString", employee.toString());
+        System.out.printf("%n%s:%n%n%s%n", "Updated employee information after new base salary", employee.toString());
     }
 }
