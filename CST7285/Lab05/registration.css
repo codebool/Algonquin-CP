@@ -1,0 +1,48 @@
+/* Set the overall font and background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Set the form container style */
+.formcontainer {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Set the title style */
+.formcontainer h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Set the input box style */
+.textfield input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Set the checkbox style */
+.checkbox {
+    margin-bottom: 20px;
+}
+
+/* Set the button style */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+}
+
+/* Set the button hover style */
+button:hover {
+    background-color: #0056b3;
+}
