@@ -206,7 +206,7 @@ public class Game extends JPanel implements ActionListener {
             for (Alien alien : aliens) {
                 Rectangle alienRect = new Rectangle(alien.getX(), alien.getY(), alien.getWidth(), alien.getHeight());
 
-                if (!shot.isAlienShot() && shotRect.intersects(alienRect)) {
+                if (!shot.isAlienShot() && shotRect.intersects(alienRect) && alien.isVisible() && shot.isVisible()) {
                     shot.setVisible(false);
                     alien.setVisible(false);
                     score += 10;
