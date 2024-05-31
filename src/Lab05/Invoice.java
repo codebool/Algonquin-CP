@@ -1,3 +1,11 @@
+/**
+ * Student Name: Bo Qu
+ * Lab Professor: Travis Lothar Czech
+ * Due Date: 2024-06-09
+ * Modified: 2024-05-31
+ * Description: Lab assignment 5
+ */
+
 package Lab05;// Lab Exercise 2: Invoice.java
 // Invoice class implements Payable.
 
