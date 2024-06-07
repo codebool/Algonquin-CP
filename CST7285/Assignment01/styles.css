@@ -1,30 +1,30 @@
 /* styles.css */
 
-.index {
+.index, .resume, .courses {
     font-family: Arial, sans-serif;
     background-color: darkolivegreen; /* Dark green background color */
-    color: white;
+    color: wheat;
     margin: 0;
     padding: 0;
 }
 
-.index header {
+.index header, .resume header, .courses header {
     background-color: #000;
     padding: 10px 0;
 }
 
-.index nav ul {
+.index nav ul, .resume nav ul, .courses nav ul {
     list-style: none;
     padding: 0;
     text-align: center;
 }
 
-.index nav ul li {
+.index nav ul li, .resume nav ul li, .courses nav ul li{
     display: inline;
     margin: 0 15px;
 }
 
-.index nav ul li a {
+.index nav ul li a, .resume nav ul li a, .courses nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -37,13 +37,18 @@
 
 .index .profile-picture {
     border-radius: 50%;
-    width: 170px;
+    width: 160px;
     height: 210px;
 }
 
 .index .about, .details {
     padding: 20px;
     text-align: center;
+}
+
+.index .no-bullets {
+    list-style-type: none;
+    padding: 0;
 }
 
 .index button {
@@ -57,6 +62,11 @@
 
 .index button:hover {
     background-color: #104E8B;
+}
+
+.index button a {
+    color: white;
+    text-decoration: none;
 }
 
 .index .details {
@@ -76,8 +86,46 @@
     padding-bottom: 5px;
 }
 
-.index .social-icons {
-    padding-top: 10px;
+.index .social-icons a {
+    color: #000; /* Change the color of the icons */
+    margin-right: 10px; /* Add some space to the right of the icons */
+}
+
+.index .social-icons i {
+    font-size: 24px; /* Change the size of the icons */
+}
+
+.courses main {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.courses #search-form {
+    margin-bottom: 20px;
+}
+
+.courses #search-input {
+    padding: 5px;
+    border: 1px solid lightgrey;
+    width: auto;
+}
+
+.courses #filter-level, #sort-asc, #sort-desc {
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.courses #filter-level:hover, #sort-asc:hover, #sort-desc:hover {
+    background-color: #45a049;
+}
+
+.courses #courses {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
 }
 
 /* Add social icon styles here */
