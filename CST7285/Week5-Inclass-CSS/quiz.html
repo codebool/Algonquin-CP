@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz: CSS Introduction</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="review.html">Review</a></li>
+                <li><a href="new_content.html">New Content</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="tetris.html">Tetris</a></li>
+                <li><a href="pacman.html">Pac-Man</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>What is CSS?</h2>
+            <form id="quiz-form">
+                <label for="q1">What does CSS stand for?</label><br>
+                <input type="radio" id="q1a" name="q1" value="a"> Computer Style Sheets<br>
+                <input type="radio" id="q1b" name="q1" value="b"> Cascading Style Sheets<br>
+                <input type="radio" id="q1c" name="q1" value="c"> Creative Style Sheets<br>
+                <input type="radio" id="q1d" name="q1" value="d"> Colorful Style Sheets<br>
+            </form>
+        </section>
+        <section>
+            <h2>CSS Syntax</h2>
+            <form>
+                <label for="q2">Which of the following is the correct CSS syntax?</label><br>
+                <input type="radio" id="q2a" name="q2" value="a"> body:color=black;<br>
+                <input type="radio" id="q2b" name="q2" value="b"> body {color: black;}<br>
+                <input type="radio" id="q2c" name="q2" value="c"> {body;color:black;}<br>
+                <input type="radio" id="q2d" name="q2" value="d"> body {color=black;}<br>
+            </form>
+        </section>
+        <section>
+            <h2>CSS Selectors</h2>
+            <form>
+                <label for="q3">How do you select elements with the class name "example"?</label><br>
+                <input type="radio" id="q3a" name="q3" value="a"> #example<br>
+                <input type="radio" id="q3b" name="q3" value="b"> .example<br>
+                <input type="radio" id="q3c" name="q3" value="c"> example<br>
+                <input type="radio" id="q3d" name="q3" value="d"> *example<br>
+            </form>
+        </section>
+        <button type="button" onclick="checkQuiz()">Submit</button>
+        <div id="result"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Web Programming Course</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

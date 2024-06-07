@@ -1,0 +1,175 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header, nav, section, footer {
+    padding: 1em;
+    background-color: var(--header-background);
+    color: var(--header-text);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: var(--header-text);
+    text-decoration: none;
+}
+
+main {
+    padding: 1em;
+}
+
+button.accordion, button.code-toggle {
+    background-color: var(--accordion-background);
+    color: var(--accordion-text);
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+button.accordion.active, button.accordion:hover, 
+button.code-toggle.active, button.code-toggle:hover {
+    background-color: var(--accordion-active-background);
+}
+
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: var(--panel-background);
+    overflow: hidden;
+    border: 1px solid var(--panel-border);
+    border-radius: 5px;
+}
+
+.code-block {
+    display: none;
+    background-color: var(--code-background);
+    color: var(--code-text);
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.example {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: var(--example-background);
+    border: 1px solid var(--example-border);
+    border-radius: 5px;
+}
+
+/* Light mode variables */
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #000;
+    --header-background: #333;
+    --header-text: #fff;
+    --accordion-background: #eee;
+    --accordion-text: #444;
+    --accordion-active-background: #ccc;
+    --panel-background: #fff;
+    --panel-border: #ccc;
+    --code-background: #2e2e2e;
+    --code-text: #e0e0e0;
+    --example-background: #fafafa;
+    --example-border: #ccc;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: #e0e0e0;
+        --header-background: #1f1f1f;
+        --header-text: #e0e0e0;
+        --accordion-background: #2c2c2c;
+        --accordion-text: #e0e0e0;
+        --accordion-active-background: #3a3a3a;
+        --panel-background: #1f1f1f;
+        --panel-border: #3a3a3a;
+        --code-background: #1e1e1e;
+        --code-text: #e0e0e0;
+        --example-background: #2a2a2a;
+        --example-border: #444;
+    }
+}
+
+/* Mario Animation */
+.mario-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.mario {
+    position: absolute;
+    width: 102px; /* Adjusted width to match a single frame width */
+    height: 137px; /* Adjusted height to match a single frame height */
+    background-image: url('mario-graphics.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    animation: walk 1s steps(3) infinite, move 15s linear infinite; /* Slowed down the move animation */
+}
+
+@keyframes walk {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -306px 0; /* Adjust the value to cycle through the first three frames */
+    }
+}
+
+@keyframes move {
+    0% {
+        left: -102px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+#tetris {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#gameCanvas {
+    border: 2px solid #000;
+    background-color: #f4f4f4;
+}
+
+#score {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#gameCanvas {
+    border: 2px solid #000;
+    background-color: #404040;
+    display: block;
+    margin: 20px auto;
+}
