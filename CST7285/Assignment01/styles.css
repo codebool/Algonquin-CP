@@ -194,3 +194,67 @@
     }
 }
 
+/* styles.css */
+
+/* 现有的样式代码保持不变 */
+
+.resume main {
+    padding: 20px;
+}
+
+.resume section {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.resume section:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.resume section:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.resume section:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.resume section:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.resume h2 {
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.resume ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resume ul li {
+    margin-bottom: 10px;
+}
+
+.resume ul li ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.resume ul li ul li {
+    margin-bottom: 5px;
+}
+
+
+
