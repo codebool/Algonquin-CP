@@ -1,0 +1,64 @@
+Write a program that randomly fills in numbers up to n into an n-by-n matrix, 
+prints the matrix, and finds the rows and columns with the highest sum. 
+(Hint: Use two ArrayLists to store the row and column indices with the highest sum). 
+Your program consists of a class that would be called Test1, which needs to implement 
+an interface called Summable. Summable needs to define two methods: 
+sumColumn and sumRow. sumRow takes a row of integers as its only parameter,
+while sumColumn would take the whole matrix and an integer to designate which column 
+needs to be summed up. In order to keep displaying the matrix in a readable format, 
+we will restrict n to be two digits, i.e. greater than zero and less than 100. 
+Because of time constraints, no need to implement this constraint but it will be our 
+understanding when testing the program. When printing the matrix out, as per 
+samples below, you need to format your output to be 2 digits 
+(hint: either use printf or String.format). 
+
+Pseudocode
+- Prompt the user to enter the matrix size (matrix means double array n x n)
+- Use two for loops (one inside the other) to populate your double array
+- In order to set your random number, make use of java.security.SecureRandom class using its nextInt(int) method
+- Within your populating of the matrix, print out every element right after it is set using printf or String.format
+- Create your ArrayList of integers (hint: list.add(0) after you create it)
+- Get the rowSum by passing the first row to sumRow method
+- Loop through row 1 (since we dealt with row 0) till less than n and check if rowSum is smaller than the sum 
+of the row in question. If yes, update rowSum, clear your list and add the new index to it. Within your loop, 
+you need to account for the case when rowSum is equal to the new row sum. Then you add both
+- Print out your largest row index (or indices). You will need another loop here to handle when you have more
+than one indices in your ArrayList. Make use of list.size here; hence, the list.add(0) above or you would get 
+an exception since the default case is to get the value at list.size()-1 ;)
+- Repeat the same algorithm for columns to print out the largest column index. 
+- sumRow: takes a row, loops through it and adds all its elements. Returns sum (deja vu ;))
+- sumColumn: takes a reference to the matrix and the column number, loop through the rows and adds the column index
+passed in for every row. Returns sum.
+
+Here are few sample runs of the program:
+Sample 1:
+Enter the matrix size n: 5
+The random matrix is:
+02 00 00 00 00 
+01 00 03 04 04 
+03 04 03 02 01 
+03 03 04 01 02 
+03 00 01 02 02 
+The largest row index: 2, 3
+The largest column index: 0
+
+Sample 2:
+Enter the matrix size n: 15
+The random matrix is:
+00 08 13 00 13 08 12 09 08 10 00 11 02 04 01 
+01 13 03 04 08 01 01 03 01 02 06 12 05 02 14 
+01 00 10 08 03 10 14 05 10 03 13 05 11 02 05 
+00 13 12 14 01 04 07 05 02 09 04 14 04 10 05 
+14 13 00 01 04 07 03 13 07 09 14 10 01 03 14 
+13 10 07 04 03 05 06 09 05 12 09 00 01 01 10 
+07 10 12 10 06 14 01 10 03 02 00 10 06 08 02 
+06 06 04 08 07 01 14 13 10 08 06 07 05 13 05 
+12 03 13 01 10 13 09 09 12 02 11 00 11 04 09 
+05 11 04 02 01 10 01 11 13 11 00 12 07 07 02 
+14 07 05 01 08 14 09 06 00 14 11 11 11 07 10 
+09 11 10 13 11 12 01 08 01 13 10 08 01 01 01 
+01 12 07 08 01 02 11 05 01 04 03 00 13 07 12 
+02 09 02 04 08 14 08 09 10 10 05 07 08 00 08 
+00 06 08 05 09 13 04 08 14 01 00 00 08 04 11 
+The largest row index: 10
+The largest column index: 1
