@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header, nav, section, footer {
+    padding: 1em;
+    background-color: var(--header-background);
+    color: var(--header-text);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: var(--header-text);
+    text-decoration: none;
+}
+
+main {
+    padding: 1em;
+    background-color: var(--main-background);
+    color: var(--main-text);
+}
+
+textarea, pre {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--textarea-background);
+    color: var(--textarea-text);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    resize: vertical;
+    overflow: auto;
+}
+
+button, input[type="button"] {
+    padding: 10px;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover, input[type="button"]:hover {
+    background-color: var(--button-hover-background);
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    accent-color: var(--button-background);
+}
+
+label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+button.accordion {
+    background-color: var(--accordion-background);
+    color: var(--accordion-text);
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: var(--accordion-active-background);
+}
+
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: var(--panel-background);
+    overflow: hidden;
+    border: 1px solid var(--panel-border);
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--footer-background);
+    color: var(--footer-text);
+    padding: 10px;
+}
+
+/* Light mode variables */
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --header-background: #333;
+    --header-text: #fff;
+    --main-background: #fff;
+    --main-text: #333;
+    --textarea-background: #fff;
+    --textarea-text: #333;
+    --button-background: #333;
+    --button-hover-background: #555;
+    --button-text: #fff;
+    --pre-background: #f4f4f4;
+    --pre-text: #333;
+    --border-color: #ccc;
+    --accordion-background: #eee;
+    --accordion-text: #444;
+    --accordion-active-background: #ccc;
+    --panel-background: #fff;
+    --panel-border: #ccc;
+    --footer-background: #333;
+    --footer-text: #fff;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: #e0e0e0;
+        --header-background: #1f1f1f;
+        --header-text: #e0e0e0;
+        --main-background: #1f1f1f;
+        --main-text: #e0e0e0;
+        --textarea-background: #1f1f1f;
+        --textarea-text: #e0e0e0;
+        --button-background: #2c2c2c;
+        --button-hover-background: #444;
+        --button-text: #e0e0e0;
+        --pre-background: #1e1e1e;
+        --pre-text: #e0e0e0;
+        --border-color: #3a3a3a;
+        --accordion-background: #2c2c2c;
+        --accordion-text: #e0e0e0;
+        --accordion-active-background: #3a3a3a;
+        --panel-background: #1f1f1f;
+        --panel-border: #3a3a3a;
+        --footer-background: #1f1f1f;
+        --footer-text: #e0e0e0;
+    }
+}

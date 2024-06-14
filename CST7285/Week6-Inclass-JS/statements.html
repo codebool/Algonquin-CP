@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Statements</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Statements</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="variables.html">Variables</a></li>
+				<li><a href="operators.html">Operators</a></li>
+				<li><a href="statements.html">Statements</a></li>
+				<li><a href="functions.html">Functions</a></li>
+				<li><a href="debugging.html">Debugging</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+			</ul>
+		</nav>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction to Statements</h2>
+            <p>JavaScript statements are composed of expressions, control structures, and function declarations. Common control structures include if-else statements and loops.</p>
+            <button class="accordion">Show Example</button>
+            <div class="panel">
+                <pre><code>if (condition) {
+    // code to execute if condition is true
+} else {
+    // code to execute if condition is false
+}
+
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+let x = 10;
+if (x > 5) {
+    console.log("x is greater than 5");
+} else {
+    console.log("x is less than or equal to 5");
+}
+
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}</code></pre>
+            </div>
+        </section>
+        <section>
+            <h2>Practice</h2>
+            <textarea id="code" rows="10" cols="50">// Type your JavaScript code here</textarea><br>
+            <button onclick="runCode()">Run Code</button>
+            <pre id="output"></pre>
+            <textarea id="console-output" rows="10" cols="50" readonly></textarea>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Web Programming Course</p>
+    </footer>
+    <script src="interpreter.js"></script>
+    <script src="accordion.js"></script>
+</body>
+</html>

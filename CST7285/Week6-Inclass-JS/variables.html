@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Variables</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="variables.html">Variables</a></li>
+				<li><a href="operators.html">Operators</a></li>
+				<li><a href="statements.html">Statements</a></li>
+				<li><a href="functions.html">Functions</a></li>
+				<li><a href="debugging.html">Debugging</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+			</ul>
+		</nav>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction to Variables</h2>
+            <p>JavaScript variables are used to store data values. Variables can be declared using the <code>let</code>, <code>const</code>, or <code>var</code> keywords.</p>
+            <p>
+				<ul>
+					<li>Variables defined with var can be redeclared.</li>
+					<li>Variables declared with var inside a { } block can be accessed from outside the block</li>
+					<li>Variables defined with let can not be redeclared.</li>
+					<li>Variables declared with let inside a { } block cannot be accessed from outside the block</li>
+					<li>const is a constant</li>					
+				</ul>
+			</p>
+			<p>
+				JavaScript has 8 Datatypes
+				<ul>
+					<li>String</li>
+					<li>Number</li>
+					<li>Bigint</li>
+					<li>Boolean</li>
+					<li>Undefined</li>
+					<li>Null</li>
+					<li>Symbol</li>
+					<li>Object</li>
+				</ul>
+			</p>
+			<p>
+				The object data type can contain both built-in objects, and user defined objects: <br />
+				Built-in object types can be: </br>
+				<ul>
+					<li>objects</li>
+					<li>arrays</li>
+					<li>dates</li>
+					<li>maps</li>
+					<li>sets</li>
+					<li>intarrays</li>
+					<li>floatarrays</li>
+					<li>promises</li>
+				</ul>		
+			
+			</p>
+			<button class="accordion">Show Example</button>
+            <div class="panel">
+                <pre><code>let x = 5;
+const y = 10;
+var z = 15;
+
+let name = "John";
+let age = 30;
+console.log(name + " is " + age + " years old.");</code></pre>
+            </div>
+        </section>
+        <section>
+            <h2>Practice</h2>
+            <textarea id="code" rows="10" cols="50">// Type your JavaScript code here</textarea><br>
+            <button onclick="runCode()">Run Code</button>
+            <pre id="output"></pre>
+            <textarea id="console-output" rows="10" cols="50" readonly></textarea>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Web Programming Course</p>
+    </footer>
+    <script src="interpreter.js"></script>
+    <script src="accordion.js"></script>
+</body>
+</html>

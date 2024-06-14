@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Operators</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="variables.html">Variables</a></li>
+				<li><a href="operators.html">Operators</a></li>
+				<li><a href="statements.html">Statements</a></li>
+				<li><a href="functions.html">Functions</a></li>
+				<li><a href="debugging.html">Debugging</a></li>
+				<li><a href="quiz.html">Quiz</a></li>
+			</ul>
+		</nav>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction to Operators</h2>
+            <p>Operators are used to perform operations on variables and values. JavaScript includes arithmetic, comparison, logical, and assignment operators.</p>
+			<p>
+				<ul>
+					<li>+ : Addition</li>
+					<li>- : Subtraction</li>
+					<li>* : Multiplication</li>
+					<li>** : Exponentiation </li>
+					<li>/ : Division</li>
+					<li>% : Modulus </li>
+					<li>++ : Increment</li>
+					<li>-- : Decrement</li>
+				</ul>
+			</p>
+            <button class="accordion">Show Example</button>
+            <div class="panel">
+                <pre><code>let a = 5;
+let b = 2;
+let sum = a + b; // addition
+let difference = a - b; // subtraction
+let product = a * b; // multiplication
+let quotient = a / b;
+
+let x = 10;
+let y = 5;
+console.log("Sum: " + (x + y));
+console.log("Difference: " + (x - y));
+console.log("Product: " + (x * y));
+console.log("Quotient: " + (x / y));</code></pre>
+            </div>
+        </section>
+        <section>
+            <h2>Practice</h2>
+            <textarea id="code" rows="10" cols="50">// Type your JavaScript code here</textarea><br>
+            <button onclick="runCode()">Run Code</button>
+            <pre id="output"></pre>
+            <textarea id="console-output" rows="10" cols="50" readonly></textarea>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Web Programming Course</p>
+    </footer>
+    <script src="interpreter.js"></script>
+    <script src="accordion.js"></script>
+</body>
+</html>

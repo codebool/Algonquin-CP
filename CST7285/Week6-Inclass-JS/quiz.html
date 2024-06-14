@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Quiz</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="variables.html">Variables</a></li>
+                <li><a href="operators.html">Operators</a></li>
+                <li><a href="statements.html">Statements</a></li>
+                <li><a href="functions.html">Functions</a></li>
+                <li><a href="debugging.html">Debugging</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Multiple Choice Questions</h2>
+            <form id="mcq-form">
+                <label>1. What is the correct way to declare a JavaScript variable?</label><br>
+                <input type="radio" name="q1" value="a"> var myVar;<br>
+                <input type="radio" name="q1" value="b"> variable myVar;<br>
+                <input type="radio" name="q1" value="c"> let myVar;<br>
+                <input type="radio" name="q1" value="d"> const myVar;<br>
+                <div id="explanation1" class="explanation" style="display: none;">The correct way to declare a variable in JavaScript is using 'let' or 'const'. 'var' is also correct but not preferred due to scoping issues.</div>
+                <br>
+
+                <label>2. What is the correct way to write a JavaScript array?</label><br>
+                <input type="radio" name="q2" value="a"> var colors = "red", "green", "blue";<br>
+                <input type="radio" name="q2" value="b"> var colors = ["red", "green", "blue"];<br>
+                <input type="radio" name="q2" value="c"> var colors = (1:"red", 2:"green", 3:"blue");<br>
+                <input type="radio" name="q2" value="d"> var colors = "red", "green", "blue";<br>
+                <div id="explanation2" class="explanation" style="display: none;">Arrays in JavaScript are declared using square brackets [].</div>
+                <br>
+
+                <label>3. Which event occurs when the user clicks on an HTML element?</label><br>
+                <input type="radio" name="q3" value="a"> onchange<br>
+                <input type="radio" name="q3" value="b"> onmouseclick<br>
+                <input type="radio" name="q3" value="c"> onmouseover<br>
+                <input type="radio" name="q3" value="d"> onclick<br>
+                <div id="explanation3" class="explanation" style="display: none;">The 'onclick' event occurs when the user clicks on an HTML element.</div>
+                <br>
+
+                <label>4. How do you write a comment in JavaScript?</label><br>
+                <input type="radio" name="q4" value="a"> <!--This is a comment--><br>
+                <input type="radio" name="q4" value="b"> // This is a comment<br>
+                <input type="radio" name="q4" value="c"> /* This is a comment */<br>
+                <input type="radio" name="q4" value="d"> * This is a comment *<br>
+                <div id="explanation4" class="explanation" style="display: none;">Comments in JavaScript can be single-line (//) or multi-line (/* */).</div>
+                <br>
+
+                <label>5. How do you declare a JavaScript variable?</label><br>
+                <input type="radio" name="q5" value="a"> v myVariable;<br>
+                <input type="radio" name="q5" value="b"> var myVariable;<br>
+                <input type="radio" name="q5" value="c"> variable myVariable;<br>
+                <input type="radio" name="q5" value="d"> myVariable var;<br>
+                <div id="explanation5" class="explanation" style="display: none;">The correct way to declare a variable in JavaScript is using 'var', 'let', or 'const'.</div>
+                <br>
+
+                <label>6. How do you create a function in JavaScript?</label><br>
+                <input type="radio" name="q6" value="a"> function myFunction() {}<br>
+                <input type="radio" name="q6" value="b"> function:myFunction() {}<br>
+                <input type="radio" name="q6" value="c"> function = myFunction() {}<br>
+                <input type="radio" name="q6" value="d"> function -> myFunction() {}<br>
+                <div id="explanation6" class="explanation" style="display: none;">A function in JavaScript is created using the 'function' keyword followed by the function name and parentheses.</div>
+                <br>
+
+                <label>7. How do you call a function named "myFunction"?</label><br>
+                <input type="radio" name="q7" value="a"> call myFunction()<br>
+                <input type="radio" name="q7" value="b"> myFunction()<br>
+                <input type="radio" name="q7" value="c"> call function myFunction()<br>
+                <input type="radio" name="q7" value="d"> Call.myFunction()<br>
+                <div id="explanation7" class="explanation" style="display: none;">A function in JavaScript is called by using its name followed by parentheses.</div>
+                <br>
+
+                <label>8. How to write an IF statement in JavaScript?</label><br>
+                <input type="radio" name="q8" value="a"> if i = 5 then<br>
+                <input type="radio" name="q8" value="b"> if i == 5 then<br>
+                <input type="radio" name="q8" value="c"> if (i == 5)<br>
+                <input type="radio" name="q8" value="d"> if i = 5<br>
+                <div id="explanation8" class="explanation" style="display: none;">An IF statement in JavaScript is written as 'if (condition) { ... }'.</div>
+                <br>
+
+                <label>9. How does a WHILE loop start?</label><br>
+                <input type="radio" name="q9" value="a"> while i = 1 to 10<br>
+                <input type="radio" name="q9" value="b"> while (i <= 10; i++)<br>
+                <input type="radio" name="q9" value="c"> while (i <= 10)<br>
+                <input type="radio" name="q9" value="d"> while (i === 10)<br>
+                <div id="explanation9" class="explanation" style="display: none;">A WHILE loop in JavaScript starts with 'while (condition) { ... }'.</div>
+                <br>
+
+                <label>10. How can you add a comment in a JavaScript?</label><br>
+                <input type="radio" name="q10" value="a"> 'This is a comment<br>
+                <input type="radio" name="q10" value="b"> // This is a comment<br>
+                <input type="radio" name="q10" value="c"> <!--This is a comment--><br>
+                <input type="radio" name="q10" value="d"> %% This is a comment<br>
+                <div id="explanation10" class="explanation" style="display: none;">Single-line comments in JavaScript start with //.</div>
+                <br>
+
+                <input type="button" value="Submit Multiple Choice" onclick="checkMCQ()" class="button">
+            </form>
+        </section>
+
+        <section>
+            <h2>Coding Questions</h2>
+            <label for="code1">1. Write a function that returns the sum of two numbers.</label><br>
+            <textarea id="code1" rows="4" cols="50" class="code-textarea">// Your code here</textarea><br>
+            <button onclick="runCodeQuestion(1)" class="button">Run Code</button>
+            <pre id="output1"></pre>
+            <pre id="expected1" style="display: none;">function sum(a, b) { return a + b; }</pre>
+            <pre id="output1-result"></pre>
+            <br>
+
+            <label for="code2">2. Write a function that returns the largest number in an array.</label><br>
+            <textarea id="code2" rows="4" cols="50" class="code-textarea">// Your code here</textarea><br>
+            <button onclick="runCodeQuestion(2)" class="button">Run Code</button>
+            <pre id="output2"></pre>
+            <pre id="expected2" style="display: none;">function max(arr) { return Math.max(...arr); }</pre>
+            <pre id="output2-result"></pre>
+            <br>
+
+            <label for="code3">3. Write a function that reverses a string.</label><br>
+            <textarea id="code3" rows="4" cols="50" class="code-textarea">// Your code here</textarea><br>
+            <button onclick="runCodeQuestion(3)" class="button">Run Code</button>
+            <pre id="output3"></pre>
+            <pre id="expected3" style="display: none;">function reverseString(str) { return str.split('').reverse().join(''); }</pre>
+            <pre id="output3-result"></pre>
+            <br>
+
+            <label for="code4">4. Write a function that checks if a number is even.</label><br>
+            <textarea id="code4" rows="4" cols="50" class="code-textarea">// Your code here</textarea><br>
+            <button onclick="runCodeQuestion(4)" class="button">Run Code</button>
+            <pre id="output4"></pre>
+            <pre id="expected4" style="display: none;">function isEven(num) { return num % 2 === 0; }</pre>
+            <pre id="output4-result"></pre>
+            <br>
+
+            <label for="code5">5. Write a function that returns the factorial of a number.</label><br>
+            <textarea id="code5" rows="4" cols="50" class="code-textarea">// Your code here</textarea><br>
+            <button onclick="runCodeQuestion(5)" class="button">Run Code</button>
+            <pre id="output5"></pre>
+            <pre id="expected5" style="display: none;">function factorial(n) { return n ? n * factorial(n - 1) : 1; }</pre>
+            <pre id="output5-result"></pre>
+            <br>
+
+            <button onclick="checkCodingQuestions()" class="button">Submit Coding Questions</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Web Programming Course</p>
+    </footer>
+    <script src="quiz.js"></script>
+    <script src="interpreter.js"></script>
+</body>
+</html>
