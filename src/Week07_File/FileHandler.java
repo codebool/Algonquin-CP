@@ -20,7 +20,7 @@ public class FileHandler {
         try (FileWriter writer = new FileWriter(file)) { // 'try-with-resources' block is used to automatically close the writer.
 
             // The 'write' method of the FileWriter class writes the specified string to the file.
-            writer.write("Hello, World!");
+            writer.write("Hello, World...");
 
             // Print a message to the console to indicate that writing data to the file was successful.
             System.out.println("File written successfully!");

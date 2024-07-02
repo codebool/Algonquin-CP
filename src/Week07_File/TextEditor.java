@@ -36,18 +36,21 @@ public class TextEditor extends JFrame implements ActionListener {
         JMenuItem openMenuItem = new JMenuItem("Open");
         JMenuItem saveMenuItem = new JMenuItem("Save");
         JMenuItem saveAsMenuItem = new JMenuItem("Save As");
+        JMenuItem exitMenuItem = new JMenuItem("Exit");
 
         // Add action listeners
         newMenuItem.addActionListener(this);
         openMenuItem.addActionListener(this);
         saveMenuItem.addActionListener(this);
         saveAsMenuItem.addActionListener(this);
+        exitMenuItem.addActionListener(this);
 
         // Add items to File menu
         fileMenu.add(newMenuItem);
         fileMenu.add(openMenuItem);
         fileMenu.add(saveMenuItem);
         fileMenu.add(saveAsMenuItem);
+        fileMenu.add(exitMenuItem);
 
         // Add the menu bar
         setJMenuBar(menuBar);
@@ -80,6 +83,9 @@ public class TextEditor extends JFrame implements ActionListener {
                 break;
             case "Save As":
                 saveFileAs();
+                break;
+            case "Exit":
+                exit();
                 break;
         }
     }
@@ -127,5 +133,9 @@ public class TextEditor extends JFrame implements ActionListener {
             }
             saveFile();
         }
+    }
+
+    private void exit() {
+        System.exit(0);
     }
 }

@@ -13,6 +13,7 @@ public class FileInfo {
         // Step 1: Specify the file you want to get information about.
         // Create a 'Path' object and pass the file name as a parameter to its 'get' method.
         // This will create a new Path instance for "example.txt".
+        // The text file should be present in the same level of the SRC folder
         Path path = Paths.get("example.txt");
 
         // Step 2: Retrieve file attributes using 'Files' class.
