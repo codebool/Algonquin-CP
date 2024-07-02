@@ -41,6 +41,8 @@ public class ExceptionTest {
         } catch (ArithmeticException | InvalidInputException e) { // using multi-catch here to catch multiple exceptions
             // Print the error message if an exception is caught
             System.out.println("Error: " + e.getMessage());
+        } finally {
+            System.out.println("End of program.");
         }
     }
 }
