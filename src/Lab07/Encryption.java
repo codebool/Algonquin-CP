@@ -36,17 +36,23 @@ public class Encryption {
 
     // Method to rename the file with a suffix
     public static String renameFile(String filePath, String suffix) {
+        // Create a Path object from the file path
         Path path = Paths.get(filePath);
+        // Get the file name from the path
         String fileName = path.getFileName().toString();
+        // Get the index of the last dot in the file name
         int dotIndex = fileName.lastIndexOf(".");
 
         String newFileName;
+        // If the file does not have an extension then add the suffix to the file name
         if(dotIndex == -1) {
             newFileName = fileName + suffix;
         } else {
+            // If the file has an extension then add the suffix before the extension
             newFileName = fileName.substring(0, dotIndex) + suffix + fileName.substring(dotIndex);
         }
 
+        // Return the new file path with the suffix added to the file name
         return path.getParent().resolve(newFileName).toString();
     }
 
