@@ -23,7 +23,6 @@ function validate() {
     const email = document.getElementById("email").value.trim();
     const pass = document.getElementById("pass").value.trim();
     const pass2 = document.getElementById("pass2").value.trim();
-    const bookNewsletter = document.getElementById("newsletter").checked;
     const agreeWithTerms = document.getElementById("terms").checked;
 
     const isEmailPassValidation = validateEmail(email);
