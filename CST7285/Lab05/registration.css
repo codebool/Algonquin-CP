@@ -16,7 +16,7 @@ body {
 
 /* Set the title style */
 .formcontainer h1 {
-    text-align: center;
+    text-align: left;
     color: #333;
 }
 
@@ -39,10 +39,19 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #007BFF;
 }
 
 /* Set the button hover style */
 button:hover {
     background-color: #0056b3;
+}
+
+#btn-submit {
+    color: white;
+    background-color: #007BFF;
+}
+
+#btn-reset {
+    color: white;
+    background-color: red;
 }
