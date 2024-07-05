@@ -9,6 +9,8 @@
 package Lab07;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Encryption {
@@ -34,16 +36,18 @@ public class Encryption {
 
     // Method to rename the file with a suffix
     public static String renameFile(String filePath, String suffix) {
-        File file = new File(filePath);
-        String fileName = file.getName();
-        int dotIndex = fileName.lastIndexOf('.');
-        if (dotIndex == -1) {
-            return file.getParent() + File.separator + fileName + suffix;
+        Path path = Paths.get(filePath);
+        String fileName = path.getFileName().toString();
+        int dotIndex = fileName.lastIndexOf(".");
+
+        String newFileName;
+        if(dotIndex == -1) {
+            newFileName = fileName + suffix;
         } else {
-            String baseName = fileName.substring(0, dotIndex);
-            String extension = fileName.substring(dotIndex);
-            return file.getParent() + File.separator + baseName + suffix + extension;
+            newFileName = fileName.substring(0, dotIndex) + suffix + fileName.substring(dotIndex);
         }
+
+        return path.getParent().resolve(newFileName).toString();
     }
 
     // Method to encrypt the file
