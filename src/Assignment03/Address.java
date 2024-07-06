@@ -9,7 +9,7 @@
 package Assignment03;
 
 public class Address {
-    private int streetNumber;
+    private String streetNumber;
     private String streetName;
     private String streetType;
     private String streetOrientation;
@@ -18,16 +18,7 @@ public class Address {
 
     public Address() {}
 
-    public Address(int streetNumber, String streetName, String streetType, String streetOrientation, String city, String province) {
-        this.streetNumber = streetNumber;
-        this.streetName = streetName;
-        this.streetType = streetType;
-        this.streetOrientation = streetOrientation;
-        this.city = city;
-        this.province = province;
-    }
-
-    public int getStreetNumber() {
+    public String getStreetNumber() {
         return streetNumber;
     }
 
@@ -51,7 +42,7 @@ public class Address {
         return province;
     }
 
-    public void setStreetNumber(int streetNumber) {
+    public void setStreetNumber(String streetNumber) {
         this.streetNumber = streetNumber;
     }
 
