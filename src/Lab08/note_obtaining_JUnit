@@ -1,0 +1,13 @@
+You will see how JUnit works from an example. To create the
+example, first you need to download JUnit from
+http://sourceforge.net/projects/junit/files/
+At present, the latest
+version is junit-4.10.jar. Download this file to c:\book\lib and add it
+to the classpath environment variable as follows:
+
+set classpath=.;%classpath%;c:\book\lib\junit-4.10.jar
+
+To test if this environment variable is set correctly, open a new
+command window, and type the following command:
+
+java org.junit.runner.JUnitCore
