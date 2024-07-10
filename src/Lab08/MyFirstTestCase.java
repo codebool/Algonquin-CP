@@ -10,12 +10,13 @@ package Lab08;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
-public class TestManagement {
+public class MyFirstTestCase {
 	private static Employee emp1;
 	private static Employee emp2;
 
@@ -40,26 +41,19 @@ public class TestManagement {
 	public void tearDown() throws Exception {
 	}
 
+	@Disabled
 	@Test
-	public void testPayEquity() {
-		Assertions.assertNotEquals(emp2.getSalary(), emp1.getSalary(), "Pay Equity needed ...");
-
-		if (emp2.getSalary() > emp1.getSalary()) {
-			if (emp1.getGender().equalsIgnoreCase("F"))
-				if (emp2.getGender().equalsIgnoreCase("M")) {
-					Management.payEquity(emp2, emp1);
-					Assertions.assertEquals(emp2.getSalary(), emp1.getSalary(), 0, "Pay Equity imposed ...");
-				}
-		}
+	public void testGetFirstName() {
+		Assertions.assertTrue(emp1.getFirstName().equals("John") &&
+				emp2.getFirstName().equals("Sarah"));
 	}
 
 	@Test
-	public void testPromotion() {
-		Assertions.assertNotEquals(7, emp1.getYearsOfService());
-		Assertions.assertEquals(70000, emp1.getSalary(), 0, "Salary before promotion: ");
-		Management.promotion(emp1);
-		Assertions.assertEquals(77000.0, emp1.getSalary(), 1, "Salary after promotion: ");
+	public void testSetFirstName() {
+		emp1.setFirstName("Adam");
+		emp2.setFirstName("Jane");
+		Assertions.assertTrue(emp1.getFirstName().equals("Adam") &&
+				emp2.getFirstName().equals("Jane"));
 	}
 
 }
-

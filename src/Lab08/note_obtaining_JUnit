@@ -11,3 +11,5 @@ To test if this environment variable is set correctly, open a new
 command window, and type the following command:
 
 java org.junit.runner.JUnitCore
+
+AllTests里面的suite会找不到：下载===》 junit-platform-suite-api-1.8.1.jar
