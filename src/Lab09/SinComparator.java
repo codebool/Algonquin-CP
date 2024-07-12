@@ -8,5 +8,12 @@
 
 package Lab09;
 
-public class SinComparator {
+import java.util.Comparator;
+
+public class SinComparator implements Comparator<Person> {
+    @Override
+    // Compare the SIN of two persons and return the result
+    public int compare(Person p1, Person p2) {
+        return p1.getSin().compareTo(p2.getSin());
+    }
 }
