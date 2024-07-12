@@ -14,15 +14,25 @@ public class Person {
     private String address;
     private String sin;
     private String driversLicense;
-    private String getDriversLicenseProvince;
+    private String driversLicenseProvince;
 
-    public Person(String firstName, String lastName, String address, String sin, String driversLicense, String getDriversLicenseProvince) {
+    public Person(String firstName, String lastName, String address, String sin, String driversLicense, String driversLicenseProvince) {
+        if (!sin.matches("\\d{9}")) {
+            throw new IllegalArgumentException("SIN must be 9 digits.");
+        }
+        if (!driversLicense.matches("[A-Z]\\d{15}")) {
+            throw new IllegalArgumentException("Drivers License must be one upper case character followed by 15 digits.");
+        }
+        if (!driversLicenseProvince.matches("[A-Z]{2}")) {
+            throw new IllegalArgumentException("Drivers License Province must be two uppercase letters.");
+        }
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.sin = sin;
         this.driversLicense = driversLicense;
-        this.getDriversLicenseProvince = getDriversLicenseProvince;
+        this.driversLicenseProvince = driversLicenseProvince;
     }
 
     public String getFirstName() {
@@ -65,11 +75,11 @@ public class Person {
         this.driversLicense = driversLicense;
     }
 
-    public String getGetDriversLicenseProvince() {
-        return getDriversLicenseProvince;
+    public String getDriversLicenseProvince() {
+        return driversLicenseProvince;
     }
 
-    public void setGetDriversLicenseProvince(String getDriversLicenseProvince) {
-        this.getDriversLicenseProvince = getDriversLicenseProvince;
+    public void setDriversLicenseProvince(String driversLicenseProvince) {
+        this.driversLicenseProvince = driversLicenseProvince;
     }
 }
