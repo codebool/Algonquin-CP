@@ -9,7 +9,7 @@
 import java.util.*;
 
 // Define the ProductInventorySystem class to manage the inventory of products
-public class ProductInventorySystem {
+public class InClassProductInventorySystem {
     // Use a HashMap to store products, with the product ID as the key and the Product object as the value
     private Map<Integer, Product> products = new HashMap<>();
 
@@ -50,7 +50,7 @@ public class ProductInventorySystem {
     // Main method to interact with the ProductInventorySystem
     public static void main(String[] args) {
         // Create an instance of ProductInventorySystem
-        ProductInventorySystem pis = new ProductInventorySystem();
+        InClassProductInventorySystem pis = new InClassProductInventorySystem();
 
         // Add products to the inventory
         pis.addProduct(new Product(1, "Laptop", 999.99, 10));
