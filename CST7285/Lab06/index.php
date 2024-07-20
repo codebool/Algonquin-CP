@@ -19,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['item'])) {
         $item = $_POST['item'];
         $retail = (float)$_POST['retail'];
-        // TODO: Verify discount
         $discount = (float)$_POST['discount'];
         $total = $retail - ($discount * $retail / 100);
 
