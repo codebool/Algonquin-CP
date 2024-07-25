@@ -36,6 +36,7 @@ public class DisplayMyAddressOnTheMap {
         generateLatLong(outputFilePath, targetFilePath);
     }
 
+    // Read the input file and write the output file
     private static void generateOutputAddresses(String inputFilePath, String outputFilePath) {
         List<Address> addresses = new ArrayList<>();
         List<Person> persons = new ArrayList<>();
@@ -100,6 +101,7 @@ public class DisplayMyAddressOnTheMap {
         }
     }
 
+    // Read the output file and write the target file
     private static void generateLatLong(String outputFilePath, String targetFilePath) {
         List<String> addresses = new ArrayList<>();
         List<Person> persons = new ArrayList<>();
@@ -146,10 +148,12 @@ public class DisplayMyAddressOnTheMap {
         }
     }
 
+    // Get the latitude and longitude from the address
     private static String getLatLongFromAddress(String address) {
         String apiKey = "AIzaSyBuRBfnZIOq9GP7ijo3rccub6WfVnXfXXs";
         String url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + apiKey;
 
+        // Send the request to Google Maps API
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpGet request = new HttpGet(url);
             HttpResponse response = httpClient.execute(request);
@@ -167,11 +171,13 @@ public class DisplayMyAddressOnTheMap {
         }
     }
 
+    // Parse the JSON response from Google Maps API
     private static String parseJsonResponse(String json) {
         Gson gson = new Gson();
         JsonObject jsonObject = gson.fromJson(json, JsonObject.class);
         JsonArray results = jsonObject.getAsJsonArray("results");
 
+        // Get the latitude and longitude from the JSON response
         if (results.size() > 0) {
             JsonObject location = results.get(0).getAsJsonObject()
                     .getAsJsonObject("geometry")
@@ -184,7 +190,5 @@ public class DisplayMyAddressOnTheMap {
         }
     }
 }
-
-
 
 //and* <Spouse first name>* <Spouse last name>*
