@@ -189,5 +189,3 @@ public class DisplayMyAddressOnTheMap {
         }
     }
 }
-
-//and* <Spouse first name>* <Spouse last name>*
