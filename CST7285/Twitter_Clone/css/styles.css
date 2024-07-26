@@ -1,0 +1,79 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Light and Dark Mode */
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Forms */
+form {
+    margin: 20px 0;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+/* Profile section */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tweets */
+.tweet {
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation */
+nav {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.dark-mode .tweet {
+    background: #444;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
