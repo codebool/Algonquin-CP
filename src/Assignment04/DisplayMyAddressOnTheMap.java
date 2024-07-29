@@ -26,12 +26,12 @@ public class DisplayMyAddressOnTheMap {
         // File paths
         String inputFilePath = "D:\\Algonquin College\\2024_Spring\\CST7284_300\\eclipse-workspace\\MyJava\\src\\Assignment04\\InputAddresses.txt";
         String outputFilePath = "D:\\Algonquin College\\2024_Spring\\CST7284_300\\eclipse-workspace\\MyJava\\src\\Assignment04\\OutputAddresses.csv";
-        String targetFilePath = "D:\\Algonquin College\\2024_Spring\\CST7284_300\\eclipse-workspace\\MyJava\\src\\Assignment04\\LatLong.csv";
+        String targetFilePath = "D:\\Algonquin College\\2024_Spring\\CST7284_300\\eclipse-workspace\\MyJava\\src\\Assignment04\\BoQu_LatLong.csv";
 
         // Generate OutputAddresses.csv from InputAddresses.txt
         generateOutputAddresses(inputFilePath, outputFilePath);
 
-        // Generate LatLong.csv from OutputAddresses.csv
+        // Generate BoQu_LatLong.csv from OutputAddresses.csv
         generateLatLong(outputFilePath, targetFilePath);
     }
 
