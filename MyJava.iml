@@ -34,5 +34,6 @@
     <orderEntry type="library" name="javafx.swing" level="project" />
     <orderEntry type="library" name="javafx.web" level="project" />
     <orderEntry type="library" name="javafx-swt" level="project" />
+    <orderEntry type="library" name="json" level="project" />
   </component>
 </module>
