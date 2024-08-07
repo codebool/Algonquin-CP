@@ -8,49 +8,51 @@
 
 package Test02;
 
-import java.util.Scanner.*;
+import java.util.Scanner;
 
 public class FixMe {
-    String [] ageRange = new String[];
+    String[] ageRange = new String[3];
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
+        Scanner input = null;
         try {
-            Scanner input = new Scanner(System.in);
+            input = new Scanner(System.in);
             System.out.print("Enter age: ");
             int age = input.nextInt();
-            System.out.println("The age range for age " + age + " is: " + getAgeRange(age));
-        } catch (Exception e) {
-            e.printStackTrace();
-        } catch (NullPointerException e) {
-            e.printStackTrace();
+            FixMe fixMe = new FixMe();
+            System.out.println("The age range for age " + age + " is: " + fixMe.getAgeRange(age));
         } catch (NotAdultAgeRangeException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             input.close();
         }
     }
 
-    public String[] getAgeRange(int age) throws NullPointerException, NotAdultAgeRangeException {
-        String ageRange;
-
+    public String getAgeRange(int age) throws NotAdultAgeRangeException {
         if (age >= 10 & age < 18) {
             ageRange[0] = "Teenage";
             throw new NotAdultAgeRangeException("Not an adult age range");
         } else if (age >= 20 & age < 30) {
             ageRange[1] = "Twenties";
-            return ageRange;
+            return ageRange[1];
         } else if (age >= 30 & age < 40) {
             ageRange[2] = "Thirties";
-            return ageRange;
+            return ageRange[2];
         } else {
-            return ageRange;
+            return null;
         }
     }
 
-    private class NotAdultAgeRangeException extends Exception {
+    private static class NotAdultAgeRangeException extends Exception {
         private static final long serialVersionUID = 1L;
 
         String msg;
+
+        public NotAdultAgeRangeException(String message) {
+            super();
+        }
 
         public String getMsg() {
             return msg;
