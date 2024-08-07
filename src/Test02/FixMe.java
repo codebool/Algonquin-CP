@@ -13,7 +13,7 @@ import java.util.Scanner.*;
 public class FixMe {
     String [] ageRange = new String[];
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         try {
             Scanner input = new Scanner(System.in);
             System.out.print("Enter age: ");
@@ -61,4 +61,5 @@ public class FixMe {
         }
     }
 }  // end of class FixMe
+
 
