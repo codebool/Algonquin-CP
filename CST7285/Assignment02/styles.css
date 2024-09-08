@@ -33,6 +33,10 @@
     font-weight: bold; /* Makes the text bold */
 }
 
+.links {
+    color: purple;
+}
+
 .index .profile {
     text-align: center; /* Centers the text */
     padding: 20px; /* Adds padding around the profile section */
@@ -55,7 +59,7 @@
 }
 
 .index .button {
-    background-color: #1E90FF; /* DodgerBlue background color */
+    background-color: purple; /* DodgerBlue background color */
     color: white; /* Sets the text color to white */
     border: none; /* Removes default border */
     padding: 10px 20px; /* Adds padding inside the button */
@@ -127,6 +131,14 @@
 
 .resume section:nth-child(5) {
     animation-delay: 1.2s; /* Delays animation start */
+}
+
+.resume section:nth-child(6) {
+    animation-delay: 1.4s; /* Delays animation start */
+}
+
+.resume section:nth-child(7) {
+    animation-delay: 1.8s; /* Delays animation start */
 }
 
 @keyframes fadeInUp {
