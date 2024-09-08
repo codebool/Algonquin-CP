@@ -62,6 +62,41 @@ const courses = [
         description: "Focusing on the principles and practices of database management systems (DBMS). Throughout this course, students will explore the fundamental concepts of databases, including data modeling, database design, and SQL (Structured Query Language) for querying and managing databases.",
         image: "./img/CST7355%20Database%20Systems.png",
         courseDescription: "Course Description for CST7355"
+    },
+    {
+        level: 3,
+        title: "CST7390 BI and Data Analytics",
+        description: "Business Intelligence (BI) can be broadly defined as a set of applications, infrastructure, and best practices that integrate and transform raw data into actionable information used for planning, monitoring and analyzing processes.",
+        image: "./img/CST7390%20BI%20and%20Data%20Analytics.png",
+        courseDescription: "Course Description for CST7390"
+    },
+    {
+        level: 3,
+        title: "CST7335 Mobile Graphical Interface Programming",
+        description: "Mobile devices play an instrumental part of everyday life, thus requiring knowledge of mobile graphical user interface development. Students explore graphical user interface programming in a mobile Android environment.",
+        image: "./img/CST7335%20Mobile%20Graphical%20Interface%20Programming.png",
+        courseDescription: "Course Description for CST7335"
+    },
+    {
+        level: 3,
+        title: "CST7288 OOP with Design Patterns",
+        description: "Design patterns are programming architecture solutions to common challenges faced in software implementation. Students implement best practices of object-oriented program development with software design patterns.",
+        image: "./img/CST7288%20OOP%20with%20Design%20Patterns.png",
+        courseDescription: "Course Description for CST7288"
+    },
+    {
+        level: 3,
+        title: "CST7109 Network Programming",
+        description: "Design patterns are programming architecture solutions to common challenges faced in software implementation. Students implement best practices of object-oriented program development with software design patterns.",
+        image: "./img/CST7109%20Network%20Programming.png",
+        courseDescription: "Course Description for CST7109"
+    },
+    {
+        level: 3,
+        title: "CST7334 Systems Analysis and Design",
+        description: "Complex information technology systems require extensive planning and design. Guided by industry standard software engineering methodologies, students gain hands-on experience with case studies used to develop systems from inception through elaboration, construction and transition phases.",
+        image: "./img/CST7334%20Systems%20Analysis%20and%20Design.png",
+        courseDescription: "Course Description for CST7334"
     }
 ];
 
@@ -90,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // group courses by level
         // all class name inherit from Assignment 01 what we have done
-        const courseLevels = [1, 2];
+        const courseLevels = [1, 2, 3];
         courseLevels.forEach(level => {
             const levelCourses = coursesList.filter(course => course.level === level);
 
