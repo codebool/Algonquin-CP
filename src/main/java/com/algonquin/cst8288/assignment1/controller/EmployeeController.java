@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 import com.algonquin.cst8288.assignment1.emoloyee.Employee;
 import com.algonquin.cst8288.assignment1.persistence.Formatter;
 import com.algonquin.cst8288.assignment1.persistence.JSONFormatter;
+import com.algonquin.cst8288.assignment1.persistence.PersistenceService;
 
 public class EmployeeController {
 
@@ -21,7 +22,7 @@ public class EmployeeController {
 			return "FALIED";
 		}
 
-		EmployeeSaver saver = new EmployeeSaver();
+		PersistenceService saver = new PersistenceService(new JSONFormatter());
 		saver.save(employee, "employee_data.txt");
 
 		return "SUCCESS";
@@ -95,15 +96,4 @@ public class EmployeeController {
 			return serviceYear <= 0 ? false : true ;
 		}
 	}
-
-	private class EmployeeSaver {
-		public void save(Employee person, String filename) throws IOException {
-			Formatter formatter = new JSONFormatter();
-			try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
-				writer.println(formatter.format(person));
-				writer.flush();
-			}
-		}
-	}
-
 }
