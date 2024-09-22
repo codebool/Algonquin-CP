@@ -11,12 +11,12 @@ package com.algonquin.cst8288.assignment1.emoloyee;
 public class PermanentEmployeeImpl implements PermanentEmployeeService {
     @Override
     public double pensionContribution(Employee employee) {
-        return employee.getSalary() * 0.01;
+        return employee.getSalary() * PENSION_PERCENTAGE;
     }
 
     @Override
     public double calculateBonus(Employee employee) {
-        return employee.getSalary() * 0.025 * employee.getNumberOfServiceYear();
+        return employee.getSalary() * BONUS_PERCENTAGE * employee.getNumberOfServiceYear();
     }
 
     @Override

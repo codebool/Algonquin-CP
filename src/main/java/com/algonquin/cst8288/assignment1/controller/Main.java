@@ -1,6 +1,7 @@
 package com.algonquin.cst8288.assignment1.controller;
 
 
+import com.algonquin.cst8288.assignment1.emoloyee.ContractEmployeeImpl;
 import com.algonquin.cst8288.assignment1.emoloyee.Employee;
 import com.algonquin.cst8288.assignment1.emoloyee.PermanentEmployeeImpl;
 import com.algonquin.cst8288.assignment1.persistence.JSONFormatter;
@@ -21,23 +22,28 @@ public class Main {
 		Employee permanentEmployee = new Employee();
 		permanentEmployee.setName("John Deer");
 		permanentEmployee.setEmail("john.deer@example.com");
+		permanentEmployee.setAddress("1234 Main St, Ottawa, ON, K1M 1A1");
 		permanentEmployee.setSalary(70000);
 		permanentEmployee.setNumberOfServiceYear(6);
 
 		Employee contractEmployee = new Employee();
 		contractEmployee.setName("Bill Guess");
 		contractEmployee.setEmail("bill.guess@example.com");
+		contractEmployee.setAddress("4321 Main St, Ottawa, ON, K1D 1A1");
 		contractEmployee.setSalary(120000);
 		contractEmployee.setNumberOfServiceYear(4);
 
 		// Use PermanentEmployeeImpl to calculate and populate required data
 		PermanentEmployeeImpl permanentEmployeeService = new PermanentEmployeeImpl();
 		permanentEmployee.setTotalCompensation(permanentEmployeeService.calculateTotalCompensation(permanentEmployee));
+		permanentEmployee.setBonus(permanentEmployeeService.calculateBonus(permanentEmployee));
+		permanentEmployee.setPension(permanentEmployeeService.pensionContribution(permanentEmployee));
 
 		// Use ContractEmployeeImpl to calculate and populate required data
 		// Assuming ContractEmployeeImpl is similar to PermanentEmployeeImpl
-		// ContractEmployeeImpl contractEmployeeService = new ContractEmployeeImpl();
-		// contractEmployee.setTotalCompensation(contractEmployeeService.calculateTotalCompensation(contractEmployee));
+		 ContractEmployeeImpl contractEmployeeService = new ContractEmployeeImpl();
+		 contractEmployee.setTotalCompensation(contractEmployeeService.calculateTotalCompensation(contractEmployee));
+		 contractEmployee.setRenewalDate(contractEmployeeService.renewalDate());
 
 		// Utilize EmployeeController to save both objects in JSON and Text formats
 		EmployeeController controller = new EmployeeController();

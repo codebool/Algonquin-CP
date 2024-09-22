@@ -10,7 +10,17 @@ public class Employee {
 	private double salary;
 	private int numberOfServiceYear;
 	private double bonus;
+	private double pension;
 	private double totalCompensation;
+
+	public double getPension() {
+		return pension;
+	}
+
+	public void setPension(double pension) {
+		this.pension = pension;
+	}
+
 	private Date renewalDate;
 
 	public Employee() {
@@ -84,7 +94,8 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [name=" + name + ", email=" + email + ", address=" + address + ", salary=" + salary
-				+ ", numberOfServiceYear=" + numberOfServiceYear + ", bonus=" + bonus + ", totalCompensation="
+				+ ", numberOfServiceYear=" + numberOfServiceYear + ", bonus=" + bonus + ", Pension="
+				+ pension + ", totalCompensation="
 				+ totalCompensation + ", renewalDate=" + renewalDate + "]";
 	}
 
