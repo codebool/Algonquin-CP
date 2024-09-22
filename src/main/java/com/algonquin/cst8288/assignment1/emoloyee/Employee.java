@@ -1,9 +1,17 @@
+/**
+ * Student Name: Bo Qu
+ * Lab Professor: Travis Lothar Czech
+ * Due Date: 2024-09-13
+ * Modified: 2024-09-13
+ * Description: Lab assignment 1
+ */
+
 package com.algonquin.cst8288.assignment1.emoloyee;
 
 import java.util.Date;
 
 public class Employee {
-
+	// Employee class with fields
 	private String name;
 	private String email;
 	private String address;
@@ -13,6 +21,7 @@ public class Employee {
 	private double pension;
 	private double totalCompensation;
 
+	// Getters and setters
 	public double getPension() {
 		return pension;
 	}
@@ -92,6 +101,7 @@ public class Employee {
 	}
 
 	@Override
+	// Override toString method
 	public String toString() {
 		return "Employee [name=" + name + ", email=" + email + ", address=" + address + ", salary=" + salary
 				+ ", numberOfServiceYear=" + numberOfServiceYear + ", bonus=" + bonus + ", Pension="

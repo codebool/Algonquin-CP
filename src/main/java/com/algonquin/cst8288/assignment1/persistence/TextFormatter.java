@@ -3,7 +3,7 @@
  * Lab Professor: Travis Lothar Czech
  * Due Date: 2024-09-13
  * Modified: 2024-09-13
- * Description: Lab assignment
+ * Description: Lab assignment 1
  */
 
 package com.algonquin.cst8288.assignment1.persistence;
@@ -13,6 +13,7 @@ import com.algonquin.cst8288.assignment1.emoloyee.Employee;
 import java.io.IOException;
 import java.util.StringJoiner;
 
+// TextFormatter class to format the employee object
 public class TextFormatter implements Formatter {
     @Override
     public String format(Employee employee) throws IOException {
@@ -20,6 +21,7 @@ public class TextFormatter implements Formatter {
             throw new IOException("Employee object is null");
         }
 
+        // Use StringJoiner to join the formatted employee object
         StringJoiner joiner = new StringJoiner(", ");
         joiner.add("name=" + employee.getName());
         joiner.add("email=" + employee.getEmail());

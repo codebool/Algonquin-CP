@@ -1,3 +1,11 @@
+/**
+ * Student Name: Bo Qu
+ * Lab Professor: Travis Lothar Czech
+ * Due Date: 2024-09-13
+ * Modified: 2024-09-13
+ * Description: Lab assignment 1
+ */
+
 package com.algonquin.cst8288.assignment1.controller;
 
 import java.io.FileWriter;
@@ -13,87 +21,106 @@ import com.algonquin.cst8288.assignment1.persistence.PersistenceService;
 
 public class EmployeeController {
 
-	public String processEmployee(Employee employee) throws IOException {
-		EmployeeProcessor processor = new EmployeeProcessor();
-		processor.process(employee);
-		
-		EmployeeValidator validator = new EmployeeValidator();
-		if (!validator.isValid(employee)) {
-			return "FALIED";
-		}
+    // Method to process and validate an Employee object, then save it to a file
+    public String processEmployee(Employee employee) throws IOException {
+        // Create an instance of EmployeeProcessor and process the employee
+        EmployeeProcessor processor = new EmployeeProcessor();
+        processor.process(employee);
 
-		PersistenceService saver = new PersistenceService(new JSONFormatter());
-		saver.save(employee, "employee_data.txt");
+        // Create an instance of EmployeeValidator and validate the employee
+        EmployeeValidator validator = new EmployeeValidator();
+        if (!validator.isValid(employee)) {
+            return "FAILED"; // Return "FAILED" if validation fails
+        }
 
-		return "SUCCESS";
-	}
+        // Create an instance of PersistenceService with a JSONFormatter and save the employee data
+        PersistenceService saver = new PersistenceService(new JSONFormatter());
+        saver.save(employee, "employee_data.txt");
 
-	private class EmployeeProcessor {
-		public void process(Employee employee) {
-			// Process data
-		}
-	}
+        return "SUCCESS"; // Return "SUCCESS" if everything is processed correctly
+    }
 
-	private class EmployeeValidator {
-		private boolean isValid(Employee employee) {
-			if (!isPresent(employee.getName())) {
-				return false;
-			}
-			employee.setName(employee.getName().trim());
+    // Private nested class for processing Employee objects
+    private class EmployeeProcessor {
+        public void process(Employee employee) {
+            // Process data (currently no implementation)
+        }
+    }
 
-			if (!isValidAlphaNumeric(employee.getName())) {
-				return false;
-			}
-			if (employee.getEmail() == null || employee.getEmail().trim().length() == 0) {
-				return false;
-			}
-			employee.setEmail(employee.getEmail().trim());
-			if (!isValidEmail(employee.getEmail())) {
-				return false;
-			}
+    // Private nested class for validating Employee objects
+    private class EmployeeValidator {
+        // Method to validate an Employee object
+        private boolean isValid(Employee employee) {
+            // Check if the name is present and valid
+            if (!isPresent(employee.getName())) {
+                return false;
+            }
+            employee.setName(employee.getName().trim());
 
-			if (!isNoSalary(employee.getSalary())) {
-				return false;
-			}
+            // Check if the name is alphanumeric
+            if (!isValidAlphaNumeric(employee.getName())) {
+                return false;
+            }
 
-			if (!isNoCompensation(employee.getTotalCompensation())) {
-				return false;
-			}
+            // Check if the email is present and valid
+            if (employee.getEmail() == null || employee.getEmail().trim().length() == 0) {
+                return false;
+            }
+            employee.setEmail(employee.getEmail().trim());
+            if (!isValidEmail(employee.getEmail())) {
+                return false;
+            }
 
-			if (!isNoServiceYear(employee.getNumberOfServiceYear())) {
-				return false;
-			}
+            // Check if the salary is greater than zero
+            if (!isNoSalary(employee.getSalary())) {
+                return false;
+            }
 
-			return true;
-		}
+            // Check if the total compensation is greater than zero
+            if (!isNoCompensation(employee.getTotalCompensation())) {
+                return false;
+            }
 
-		private boolean isPresent(String value) {
-			return value != null && value.trim().length() > 0;
-		}
+            // Check if the number of service years is greater than zero
+            if (!isNoServiceYear(employee.getNumberOfServiceYear())) {
+                return false;
+            }
 
-		private boolean isValidAlphaNumeric(String value) {
-			Pattern pattern = Pattern.compile("[^A-Za-z0-9]");
-			Matcher matcher = pattern.matcher(value);
-			return !matcher.find();
-		}
+            return true; // Return true if all validations pass
+        }
 
-		private boolean isValidEmail(String value) {
-			Pattern pattern = Pattern
-					.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
-			Matcher matcher = pattern.matcher(value);
-			return matcher.find();
-		}
+        // Helper method to check if a string is present
+        private boolean isPresent(String value) {
+            return value != null && value.trim().length() > 0;
+        }
 
-		private boolean isNoSalary(double salary) {
-			return salary <= 0 ? false : true ;
-		}
+        // Helper method to check if a string is alphanumeric
+        private boolean isValidAlphaNumeric(String value) {
+            Pattern pattern = Pattern.compile("[^A-Za-z0-9]");
+            Matcher matcher = pattern.matcher(value);
+            return !matcher.find();
+        }
 
-		private boolean isNoCompensation(double compensation) {
-			return compensation <= 0 ? false : true ;
-		}
+        // Helper method to check if an email is valid
+        private boolean isValidEmail(String value) {
+            Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+            Matcher matcher = pattern.matcher(value);
+            return matcher.find();
+        }
 
-		private boolean isNoServiceYear(int serviceYear) {
-			return serviceYear <= 0 ? false : true ;
-		}
-	}
+        // Helper method to check if the salary is greater than zero
+        private boolean isNoSalary(double salary) {
+            return salary > 0;
+        }
+
+        // Helper method to check if the total compensation is greater than zero
+        private boolean isNoCompensation(double compensation) {
+            return compensation > 0;
+        }
+
+        // Helper method to check if the number of service years is greater than zero
+        private boolean isNoServiceYear(int serviceYear) {
+            return serviceYear > 0;
+        }
+    }
 }

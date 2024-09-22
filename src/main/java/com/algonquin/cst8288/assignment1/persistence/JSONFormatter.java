@@ -1,3 +1,11 @@
+/**
+ * Student Name: Bo Qu
+ * Lab Professor: Travis Lothar Czech
+ * Due Date: 2024-09-13
+ * Modified: 2024-09-13
+ * Description: Lab assignment 1
+ */
+
 package com.algonquin.cst8288.assignment1.persistence;
 
 import java.io.IOException;
@@ -8,9 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 /**
- * 
  * An implementation for formatting the data in JSON format.
- * 
  */
 
 public class JSONFormatter implements Formatter{
@@ -18,9 +24,9 @@ public class JSONFormatter implements Formatter{
 	/**
 	 * The method process the person object and extract the attributes 
 	 * JSON format.
-	 * 
 	 */
 	@Override
+	// format method to format the employee object
 	public String format(Employee person) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.registerModule(new JavaTimeModule());
@@ -30,5 +36,4 @@ public class JSONFormatter implements Formatter{
 			throw new IOException(e);
 		}
 	}
-
 }
