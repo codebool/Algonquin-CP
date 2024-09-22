@@ -1,0 +1,67 @@
++-------------------------+
+|      Employee           |
++-------------------------+
+| - name: String          |
+| - email: String         |
+| - salary: int           |
+| - numberOfServiceYear: int |
++-------------------------+
+| + getName(): String     |
+| + getEmail(): String    |
+| + getSalary(): int      |
+| + getNumberOfServiceYear(): int |
+| + setName(name: String): void |
+| + setEmail(email: String): void |
+| + setSalary(salary: int): void |
+| + setNumberOfServiceYear(years: int): void |
++-------------------------+
+
++-------------------------+
+|  PermanentEmployeeImpl  |
++-------------------------+
+| + pensionContribution(employee: Employee): double |
+| + calculateBonus(employee: Employee): double       |
+| + calculateTotalCompensation(employee: Employee): double |
+| + getSalary(employee: Employee): double            |
++-------------------------+
+
++-------------------------+
+|  ContractEmployeeImpl   |
++-------------------------+
+| + calculateTotalCompensation(employee: Employee): double |
+| + getSalary(employee: Employee): double            |
+| + renewalDate(): Date                              |
++-------------------------+
+
++-------------------------+
+|  PersistenceService     |
++-------------------------+
+| - formatter: Formatter  |
++-------------------------+
+| + save(employee: Employee, filename: String): void |
++-------------------------+
+
++-------------------------+
+|  JSONFormatter          |
++-------------------------+
+| + format(employee: Employee): String |
++-------------------------+
+
+Purpose of Each Newly Introduced Class
+PermanentEmployeeImplTest: This class is designed to test the functionalities of the PermanentEmployeeImpl class. It ensures that the methods for calculating pension contributions, bonuses, total compensation, and retrieving salary work as expected.
+ContractEmployeeImplTest: This class tests the functionalities of the ContractEmployeeImpl class. It verifies the methods for calculating total compensation, retrieving salary, and determining the renewal date for contract employees.
+PersistenceServiceTest: This class tests the PersistenceService class, ensuring that employee data is correctly saved to a file using the specified formatter.
+Application of SOLID Principles
+Single Responsibility Principle (SRP):
+Each class has a single responsibility. For example, PermanentEmployeeImpl handles calculations specific to permanent employees, while ContractEmployeeImpl handles calculations specific to contract employees.
+The PersistenceService class is responsible for saving employee data, and the JSONFormatter class is responsible for formatting employee data.
+Open/Closed Principle (OCP):
+The Employee class can be extended to add more types of employees without modifying the existing code.
+The PersistenceService class can use different formatters (e.g., JSONFormatter) without changing its implementation.
+Liskov Substitution Principle (LSP):
+Subtypes (e.g., PermanentEmployeeImpl, ContractEmployeeImpl) can be used interchangeably with their base type (Employee) without affecting the correctness of the program.
+Interface Segregation Principle (ISP):
+The design avoids large, monolithic interfaces. For example, the Formatter interface is specific to formatting employee data, and different implementations can be provided as needed.
+Dependency Inversion Principle (DIP):
+High-level modules (PersistenceService) do not depend on low-level modules (JSONFormatter). Instead, they depend on abstractions (Formatter), allowing for flexible and interchangeable implementations.
+By adhering to these principles, the solution is modular, maintainable, and scalable, ensuring that each class has a clear and focused responsibility.
