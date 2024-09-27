@@ -23,7 +23,7 @@ public class VehicleDirector {
                 .setModel("Default Model")
                 .setYear(2020)
                 .setEngineType("V6 Engine")
-                .setWheels("4 Wheels");
+                .setWheels("4 Wheels").setType("Car");
     }
 
     public Vehicle getVehicle() {

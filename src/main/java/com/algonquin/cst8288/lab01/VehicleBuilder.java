@@ -48,6 +48,30 @@ public class VehicleBuilder {
         return this;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getEngineType() {
+        return engineType;
+    }
+
+    public String getWheels() {
+        return wheels;
+    }
+
     // Build method
     public Vehicle build() {
         return VehicleFactory.createVehicle(type, make, model, year, engineType, wheels);

@@ -27,8 +27,9 @@ abstract class Vehicle {
         System.out.println(this.type + "is stopping...");
     }
 
+    @Override
     public String toString() {
-        return "Make: " + make + ", Model: " + model + ", Year: " + year;
+        return type + ": " + make + " " + model + ", made in " + year;
     }
 
     public static void main(String[] args) {
@@ -51,8 +52,7 @@ abstract class Vehicle {
                 .setWheels("4 Wheels");
 
         VehicleDirector director = new VehicleDirector(carBuilder);
-        director.constructVehicle();
-        Vehicle car = director.getVehicle();
+        Vehicle car = carBuilder.build();
         car.start();
 
         // Add the car to the vehicle manager

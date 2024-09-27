@@ -44,4 +44,8 @@ public class VehicleManager {
             System.out.println(vehicle);
         }
     }
+
+    public List getVehicleList() {
+        return vehicleList;
+    }
 }
