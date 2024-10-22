@@ -8,15 +8,19 @@
 
 package org.cst8288Lab2.model;
 
+// Course class
 public class Course {
+    // private fields
     private String courseId;
     private String courseName;
 
+    // constructor with two parameters
     public Course(String courseId, String courseName) {
         this.courseId = courseId;
         this.courseName = courseName;
     }
 
+    // getter and setter methods
     public String getCourseId() {
         return courseId;
     }
@@ -34,6 +38,7 @@ public class Course {
     }
 
     @Override
+    // override toString method
     public String toString() {
         return "Course [courseId: " + courseId + ", courseName: " + courseName + "]";
     }

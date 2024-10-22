@@ -8,19 +8,22 @@
 
 package org.cst8288Lab2.model;
 
+// StudentCourse class
 public class StudentCourse {
     private int studentId;
     private String courseId;
     private int term;
     private int year;
 
-    public StudentCourse(int studnetId, String courseId, int term, int year) {
-        this.studentId = studnetId;
+    // constructor with four parameters
+    public StudentCourse(int studentId, String courseId, int term, int year) {
+        this.studentId = studentId;
         this.courseId = courseId;
         this.term = term;
         this.year = year;
     }
 
+    // getter and setter methods
     public int getStudentId() {
         return studentId;
     }
@@ -54,6 +57,7 @@ public class StudentCourse {
     }
 
     @Override
+    // override toString method
     public String toString() {
         return "StudentCourse [studentId: " + studentId + ", courseId: " + courseId + ", term: " + term + ", year: " + year + "]";
     }

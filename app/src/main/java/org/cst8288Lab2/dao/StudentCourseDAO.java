@@ -12,6 +12,7 @@ import java.sql.SQLException;
 
 // Interface for StudentCourseDAO
 public interface StudentCourseDAO {
+    // Method to enroll student in course
     void enrollStudentInCourse(int studentId, String courseId, int term, int year) throws SQLException;
 }
 

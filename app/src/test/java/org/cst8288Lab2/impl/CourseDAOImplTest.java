@@ -7,14 +7,15 @@ import org.junit.jupiter.api.Test;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+// CourseDAOImplTest class
 class CourseDAOImplTest {
-
+    // Declare the CourseDAOImpl and Connection objects
     private CourseDAOImpl courseDAO;
     private Connection connection;
 
+    // Set up the database connection
     @BeforeEach
     void setUp() throws SQLException {
         // Set up the database connection
@@ -22,25 +23,27 @@ class CourseDAOImplTest {
         courseDAO = new CourseDAOImpl(connection);
     }
 
+    // Test the addCourse method
     @Test
     void addCourse() throws SQLException {
-        Course course = new Course("CS101", "Introduction to Computer Science");
+        Course course = new Course("CST1010", "Introduction to Computer Science");
         courseDAO.addCourse(course);
 
-        Course retrievedCourse = courseDAO.getCourseById("CS101");
+        Course retrievedCourse = courseDAO.getCourseById("CST1010");
         assertNotNull(retrievedCourse);
-        assertEquals("CS101", retrievedCourse.getCourseId());
+        assertEquals("CST1010", retrievedCourse.getCourseId());
         assertEquals("Introduction to Computer Science", retrievedCourse.getCourseName());
     }
 
+    // Test the getCourseById method
     @Test
     void getCourseById() throws SQLException {
-        Course course = new Course("CS102", "Data Structures");
+        Course course = new Course("CST1020", "Data Structures");
         courseDAO.addCourse(course);
 
-        Course retrievedCourse = courseDAO.getCourseById("CS102");
+        Course retrievedCourse = courseDAO.getCourseById("CST1020");
         assertNotNull(retrievedCourse);
-        assertEquals("CS102", retrievedCourse.getCourseId());
+        assertEquals("CST1020", retrievedCourse.getCourseId());
         assertEquals("Data Structures", retrievedCourse.getCourseName());
     }
 }

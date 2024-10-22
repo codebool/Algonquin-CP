@@ -13,6 +13,8 @@ import org.cst8288Lab2.model.Course;
 
 // Interface for CourseDAO
 public interface CourseDAO {
+    // Add a course to the database using the course object
     void addCourse(Course course) throws SQLException;
+    // Get a course by its courseId
     Course getCourseById(String courseId) throws SQLException;
 }

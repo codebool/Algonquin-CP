@@ -16,6 +16,7 @@ import org.cst8288Lab2.impl.StudentCourseDAOImpl;
 import org.cst8288Lab2.impl.StudentDAOImpl;
 import org.cst8288Lab2.model.Course;
 import org.cst8288Lab2.model.Student;
+
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -42,11 +43,15 @@ public class App {
 
         // Load database properties and establish connection
         try (InputStream dbConfig = new FileInputStream("./app/data/database.properties")) {
+            // Load database properties
             dbConnection.load(dbConfig);
+            // Establish connection
             String url = dbConnection.getProperty("url");
             String user = dbConnection.getProperty("user");
             String password = dbConnection.getProperty("pass");
+            // Get connection
             connection = DriverManager.getConnection(url, user, password);
+            // Print connection successful
             System.out.println("Connection Successful");
         } catch (IOException | SQLException e) {
             e.printStackTrace();
@@ -59,37 +64,37 @@ public class App {
 
         //Preserve this input path
         try (InputStream in = new FileInputStream("./app/data/bulk-import.csv")) {
+            // Initialize variables for success and failure counts and error report string builder
             int failureCount = 0;
             int successCount = 0;
             StringBuilder errorReport = new StringBuilder();
 
             // Read the file using BufferedReader
             try (BufferedReader br = new BufferedReader(new InputStreamReader(in))) {
+                // Initialize line number and line variables
                 int lineNum = 0;
-                String line;
+                String line = "";
 
                 // Read each line from the file
                 while ((line = br.readLine()) != null) {
                     lineNum++;
                     // Split the line by comma and space
                     String[] values = line.split(", ");
+                    // Check if the line has 7 fields (studentId, firstName, lastName, courseId, courseName, term, year)
                     if (values.length != 7) {
-                        errorReport.append("Line ").append(lineNum).append(": ").append("Invalid number of fields\n");
+                        // Append error message to error report and increment failure count
+                        errorReport.append("Line #").append(lineNum).append(": ").append("Invalid number of fields\n");
                         failureCount++;
                         continue;
                     }
 
                     // Extract values from the line
-                    String studentIdStr = values[0];
-                    String firstName = values[1];
-                    String lastName = values[2];
-                    String courseId = values[3];
-                    String courseName = values[4];
-                    String termStr = values[5];
-                    String yearStr = values[6];
+                    String studentIdStr = values[0], firstName = values[1], lastName = values[2];
+                    String courseId = values[3], courseName = values[4], termStr = values[5], yearStr = values[6];
 
+                    // Try to add student and course to the database
                     try {
-                        // Validate each field
+                        // Validate each field using Validator class methods and throw exception if invalid
                         if (!Validator.validateStudentId(studentIdStr)) {
                             throw new IllegalArgumentException("Invalid studentId");
                         }
@@ -103,7 +108,7 @@ public class App {
                             throw new IllegalArgumentException("Invalid year");
                         }
 
-                        // Convert string to integer
+                        // Convert string to integer and enroll student in course
                         int studentId = Integer.parseInt(studentIdStr);
                         int term = Validator.convertTerm(termStr);
                         int year = Integer.parseInt(yearStr);
@@ -126,13 +131,13 @@ public class App {
                         studentCourseDAO.enrollStudentInCourse(studentId, courseId, term, year);
                         successCount++;
                     } catch (NumberFormatException e) {
-                        errorReport.append("Line ").append(lineNum).append(": Invalid data type\n");
+                        errorReport.append("Line #").append(lineNum).append(": Invalid data type\n");
                         failureCount++;
                     } catch (IllegalArgumentException e) {
-                        errorReport.append("Line ").append(lineNum).append(": ").append(e.getMessage()).append("\n");
+                        errorReport.append("Line #").append(lineNum).append(": ").append(e.getMessage()).append("\n");
                         failureCount++;
                     } catch (SQLException e) {
-                        errorReport.append("Line ").append(lineNum).append(": SQL Exception\n");
+                        errorReport.append("Line #").append(lineNum).append(": SQL Exception\n");
                         failureCount++;
                     }
                 }
@@ -146,8 +151,10 @@ public class App {
                 e.printStackTrace();
             } finally {
                 try {
-                    // Close connection
-                    if (connection != null) connection.close();
+                    // Close connection if not null
+                    if (connection != null) {
+                        connection.close();
+                    }
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -161,9 +168,9 @@ public class App {
     private static void generateSuccessReport(int successCount) throws IOException {
         // Write success report to import-report.md
         try (BufferedWriter successWriter = new BufferedWriter(new FileWriter("./app/data/import-report.md"))) {
-            successWriter.write("#Success Report\n");
+            successWriter.write("# Success Report\n");
             successWriter.write("Date and Time: " + LocalDateTime.now() + "\n");
-            successWriter.write("Records Successfully Added: " + successCount + "\n");
+            successWriter.write("Records Successfully Added Total Number: " + successCount + "\n");
         }
     }
 
@@ -174,47 +181,11 @@ public class App {
             errorWriter.write("# Error Report\n");
             errorWriter.write("Date and Time: " + LocalDateTime.now() + "\n");
             errorWriter.write(errorReportContent);
-            errorWriter.write("Records Failure Number: " + failureCount + "\n");
+            errorWriter.write("Records Failure Total Number: " + failureCount + "\n");
         }
     }
 }
 
-// Validator class is added to validate studentId, courseId, term, year
-class Validator {
-    static int ALGONQUIN_ESTABLISHED_YEAR = 1967;
 
-    public static boolean validateStudentId(String studentId) {
-        // studentId must be 9 digits
-        return studentId.matches("\\d{9}");
-    }
-
-    public static boolean validateCourseId(String courseId) {
-        // courseId must be 3 uppercase letters followed by 4 digits
-        return courseId.matches("(?i)[a-z]{3}\\d{4}");
-    }
-
-    public static boolean validateTerm(String term) {
-        // term must be one of WINTER, SUMMER, FALL
-        return term.equalsIgnoreCase("WINTER") ||
-                term.equalsIgnoreCase("SUMMER") ||
-                term.equalsIgnoreCase("FALL");
-    }
-
-    // convert term to integer
-    public static int convertTerm(String term) {
-        switch (term.toUpperCase()) {
-            case "WINTER": return 1;
-            case "SUMMER": return 2;
-            case "FALL": return 3;
-            default: throw new IllegalArgumentException("Invalid term: " + term);
-        }
-    }
-
-    // year must be between 1967 and current year
-    public static boolean validateYear(int year) {
-        int currentYear = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);
-        return year >= ALGONQUIN_ESTABLISHED_YEAR && year <= currentYear;
-    }
-}
 
 

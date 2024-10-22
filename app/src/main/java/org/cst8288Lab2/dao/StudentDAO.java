@@ -13,6 +13,8 @@ import org.cst8288Lab2.model.Student;
 
 // Interface for StudentDAO
 public interface StudentDAO {
+    // Add a student to the database
     void addStudent(Student student) throws SQLException;
+    // Get a student by their ID
     Student getStudentById(int studentId) throws SQLException;
 }

@@ -1,11 +1,11 @@
 package org.cst8288Lab2;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+// ValidatorTest class
 class ValidatorTest {
-
+    // Test the validateStudentId method
     @Test
     void validateStudentId() {
         assertTrue(Validator.validateStudentId("123456789"));
@@ -14,6 +14,7 @@ class ValidatorTest {
         assertFalse(Validator.validateStudentId("abcdefghi"));
     }
 
+    // Test the validateCourseId method
     @Test
     void validateCourseId() {
         assertTrue(Validator.validateCourseId("abc1234"));
@@ -23,6 +24,7 @@ class ValidatorTest {
         assertFalse(Validator.validateCourseId("abc12345"));
     }
 
+    // Test the validateTerm method
     @Test
     void validateTerm() {
         assertTrue(Validator.validateTerm("WINTER"));
@@ -32,6 +34,7 @@ class ValidatorTest {
         assertFalse(Validator.validateTerm("SPRING"));
     }
 
+    // Test the convertTerm method
     @Test
     void convertTerm() {
         assertEquals(1, Validator.convertTerm("WINTER"));
@@ -40,11 +43,12 @@ class ValidatorTest {
         assertThrows(IllegalArgumentException.class, () -> Validator.convertTerm("SPRING"));
     }
 
+    // Test the validateYear method
     @Test
     void validateYear() {
-        assertTrue(Validator.validateYear(1967));
+        assertTrue(Validator.validateYear(1962)); // date before Algonquin College was founded
         assertTrue(Validator.validateYear(2023));
-        assertFalse(Validator.validateYear(1966));
+        assertFalse(Validator.validateYear(1968));
         assertTrue(Validator.validateYear(2024));
     }
 }
