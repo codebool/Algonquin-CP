@@ -8,10 +8,8 @@
 
 package org.cst8288Lab2.impl;
 
-import org.cst8288Lab2.dao.StudentCourseDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,14 +18,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 // StudentCourseDAOImplTest class
 class StudentCourseDAOImplTest {
     // Declare the StudentCourseDAOImpl and Connection objects
-    private StudentCourseDAO studentCourseDAO;
     Connection connection = null;
 
     // Set up the database connection
@@ -35,8 +31,7 @@ class StudentCourseDAOImplTest {
     void setUp() throws SQLException {
         // Set up the database connection
         Properties dbConnection = new Properties();
-
-
+        // Load database properties and establish connection
         try (InputStream dbConfig = new FileInputStream("../app/data/database.properties")) {
             // Load database properties
             dbConnection.load(dbConfig);
@@ -51,7 +46,6 @@ class StudentCourseDAOImplTest {
         } catch (IOException | SQLException e) {
             e.printStackTrace();
         }
-        studentCourseDAO = new StudentCourseDAOImpl(connection);
     }
 
     // Test the enrollStudentInCourse method
