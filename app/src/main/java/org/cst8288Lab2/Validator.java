@@ -9,7 +9,7 @@
 package org.cst8288Lab2;
 
 // Validator class is added to validate studentId, courseId, term, year
-class Validator {
+public class Validator {
     static int ALGONQUIN_ESTABLISHED_YEAR = 1967;
 
     public static boolean validateStudentId(String studentId) {

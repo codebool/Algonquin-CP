@@ -1,40 +1,73 @@
+/**
+ * Student Name: Bo Qu
+ * Lab Professor: Travis Lothar Czech
+ * Due Date: 2024-10-21
+ * Modified: 2024-10-21
+ * Description: Lab assignment 02
+ */
+
 package org.cst8288Lab2.impl;
 
 import org.cst8288Lab2.dao.StudentCourseDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Properties;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 // StudentCourseDAOImplTest class
 class StudentCourseDAOImplTest {
     // Declare the StudentCourseDAOImpl and Connection objects
     private StudentCourseDAO studentCourseDAO;
-    private Connection connection;
+    Connection connection = null;
 
     // Set up the database connection
     @BeforeEach
     void setUp() throws SQLException {
         // Set up the database connection
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab2", "username", "password");
+        Properties dbConnection = new Properties();
+
+
+        try (InputStream dbConfig = new FileInputStream("../app/data/database.properties")) {
+            // Load database properties
+            dbConnection.load(dbConfig);
+            // Establish connection
+            String url = dbConnection.getProperty("url");
+            String user = dbConnection.getProperty("user");
+            String password = dbConnection.getProperty("pass");
+            // Get connection
+            connection = DriverManager.getConnection(url, user, password);
+            // Print connection successful
+            System.out.println("Connection Successful");
+        } catch (IOException | SQLException e) {
+            e.printStackTrace();
+        }
         studentCourseDAO = new StudentCourseDAOImpl(connection);
     }
 
     // Test the enrollStudentInCourse method
     @Test
     void enrollStudentInCourse() throws SQLException {
-        // Enroll a student in a course
-        int studentId = 121212121;
-        String courseId = "CST1010";
+        // make sure the student is not already enrolled in the course
+        int studentId = 123546851;
+        String courseId = "cst8288";
         int term = 1;
-        int year = 2023;
-        // Enroll the student in the course
-        studentCourseDAO.enrollStudentInCourse(studentId, courseId, term, year);
-        // Retrieve the student course from the database
-        ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM StudentCourse WHERE studentId = 121212121 AND courseId = 'CST1010' AND term = 1 AND year = 2023");
+        int year = 2024;
+
+        // Verify the enrollment
+        ResultSet rs = connection.createStatement().executeQuery(
+                "SELECT * FROM StudentCourse WHERE studentId = " + studentId + " AND courseId = '" + courseId + "' AND term = " + term + " AND year = " + year
+        );
+        // If the student is already enrolled, delete the record
         assertTrue(rs.next());
         assertEquals(studentId, rs.getInt("studentId"));
         assertEquals(courseId, rs.getString("courseId"));

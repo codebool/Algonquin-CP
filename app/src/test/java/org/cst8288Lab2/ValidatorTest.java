@@ -1,3 +1,11 @@
+/**
+ * Student Name: Bo Qu
+ * Lab Professor: Travis Lothar Czech
+ * Due Date: 2024-10-21
+ * Modified: 2024-10-21
+ * Description: Lab assignment 02
+ */
+
 package org.cst8288Lab2;
 
 import org.junit.jupiter.api.Test;
@@ -46,9 +54,9 @@ class ValidatorTest {
     // Test the validateYear method
     @Test
     void validateYear() {
-        assertTrue(Validator.validateYear(1962)); // date before Algonquin College was founded
+        assertFalse(Validator.validateYear(1962)); // date before Algonquin College was founded
         assertTrue(Validator.validateYear(2023));
-        assertFalse(Validator.validateYear(1968));
+        assertTrue(Validator.validateYear(1968));
         assertTrue(Validator.validateYear(2024));
     }
 }

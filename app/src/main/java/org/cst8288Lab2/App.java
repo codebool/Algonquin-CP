@@ -16,7 +16,6 @@ import org.cst8288Lab2.impl.StudentCourseDAOImpl;
 import org.cst8288Lab2.impl.StudentDAOImpl;
 import org.cst8288Lab2.model.Course;
 import org.cst8288Lab2.model.Student;
-
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
