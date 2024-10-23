@@ -56,13 +56,13 @@ class StudentDAOImplTest {
     // Test the addStudent method
     @Test
     void addStudent() throws SQLException {
-        Student student = new Student(1, "Bill", "Gate");
+        Student student = new Student(1, "Bo", "Qu");
         studentDAO.addStudent(student);
         // Retrieve the student from the database
         Student retrievedStudent = studentDAO.getStudentById(1);
         assertNotNull(retrievedStudent);
-        assertEquals("Bill", retrievedStudent.getFirstName());
-        assertEquals("Gate", retrievedStudent.getLastName());
+        assertEquals("Bo", retrievedStudent.getFirstName());
+        assertEquals("Qu", retrievedStudent.getLastName());
     }
 
     // Test the getStudentById method
