@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Room</title>
+    <script>
+        // Function to post a new chat message
+        function sendMessage() {
+            const user = document.getElementById("user").value;
+            const message = document.getElementById("message").value;
+
+            fetch("/chatapp/ChatServlet", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `user=${user}&message=${encodeURIComponent(message)}`
+            }).then(() => {
+                document.getElementById("message").value = "";
+                updateChat();
+            });
+        }
+
+        // Function to retrieve chat history
+        function updateChat() {
+            fetch("/chatapp/ChatServlet")
+                .then(response => response.json())
+                .then(data => {
+                    const chatBox = document.getElementById("chatBox");
+                    chatBox.innerHTML = "";
+                    data.forEach(msg => {
+                        const messageElem = document.createElement("p");
+                        messageElem.textContent = msg;
+                        chatBox.appendChild(messageElem);
+                    });
+                });
+        }
+
+        // Polling function to refresh chat every 3 seconds
+        setInterval(updateChat, 3000);
+    </script>
+</head>
+<body>
+<div id="chatBox" style="border: 1px solid black; height: 300px; overflow-y: scroll;">
+    <!-- Chat messages will be displayed here -->
+</div>
+<input type="text" id="user" placeholder="Enter your name">
+<input type="text" id="message" placeholder="Enter your message">
+<button onclick="sendMessage()">Send</button>
+</body>
+</html>
