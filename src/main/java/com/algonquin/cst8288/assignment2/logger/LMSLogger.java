@@ -21,7 +21,7 @@ public class LMSLogger {
 
     private LMSLogger() {
         try {
-            FileWriter fileWriter = new FileWriter("application.log", true);
+            FileWriter fileWriter = new FileWriter("Assignment2.log", true);
             writer = new PrintWriter(fileWriter, true);
         } catch (IOException e) {
             e.printStackTrace();

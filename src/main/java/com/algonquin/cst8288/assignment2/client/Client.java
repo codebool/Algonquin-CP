@@ -10,7 +10,6 @@ package com.algonquin.cst8288.assignment2.client;
 
 import com.algonquin.cst8288.assignment2.database.DBOperations;
 import com.algonquin.cst8288.assignment2.event.*;
-
 import java.math.BigDecimal;
 import java.util.List;
 
