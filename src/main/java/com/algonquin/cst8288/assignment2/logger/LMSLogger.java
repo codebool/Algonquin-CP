@@ -15,19 +15,22 @@ import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+// Logger class to log messages
 public class LMSLogger {
     private static LMSLogger instance;
     private PrintWriter writer;
 
+    // Private constructor to prevent instantiation
     private LMSLogger() {
         try {
-            FileWriter fileWriter = new FileWriter("Assignment2.log", true);
+            FileWriter fileWriter = new FileWriter("Assignment2_BoQu.log", true);
             writer = new PrintWriter(fileWriter, true);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    // Get the singleton instance of LMSLogger
     public static synchronized LMSLogger getInstance() {
         if (instance == null) {
             instance = new LMSLogger();
@@ -35,11 +38,13 @@ public class LMSLogger {
         return instance;
     }
 
+    // Log a message with a given log level
     public void log(LogLevel level, String message) {
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         writer.println(timestamp + " [" + level + "] " + message);
     }
 
+    // Log a message with a given log level and throwable
     public void log(LogLevel level, String message, Throwable throwable) {
         log(level, message);
         throwable.printStackTrace(writer);

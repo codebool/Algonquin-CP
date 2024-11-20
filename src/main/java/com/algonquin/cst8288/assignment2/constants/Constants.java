@@ -8,6 +8,7 @@
 
 package com.algonquin.cst8288.assignment2.constants;
 
+// Constants class to store the constants used in the application
 public final class Constants {
 	
 	public static final double WORKSHOP_DURATION = 1.5;

@@ -13,6 +13,7 @@ import com.algonquin.cst8288.assignment2.event.*;
 import java.math.BigDecimal;
 import java.util.List;
 
+// Client class to test the DBOperations class
 public class Client {
 	public static void main(String[] args) {
 		DBOperations dbOperations = new DBOperations();

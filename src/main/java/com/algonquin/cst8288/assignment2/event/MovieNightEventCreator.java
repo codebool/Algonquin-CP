@@ -8,8 +8,10 @@
 
 package com.algonquin.cst8288.assignment2.event;
 
+// Event creator for MovieNightEvent
 public class MovieNightEventCreator extends EventCreator {
     @Override
+    // Create a MovieNightEvent
     public Event createEvent() {
         return new MovieNightEvent();
     }

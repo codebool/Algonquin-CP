@@ -4,7 +4,7 @@
   <artifactId>assignment2W24</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>SOLID Principles</name>
-  <description>Assignment 2</description>
+  <description>Assignment 2</description>s
   
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>

@@ -8,8 +8,10 @@
 
 package com.algonquin.cst8288.assignment2.event;
 
+// Event creator for KidsStorytimeEvent
 public class KidsStorytimeEventCreator extends EventCreator {
     @Override
+    // Create a KidsStorytimeEvent
     public Event createEvent() {
         return new KidsStorytimeEvent();
     }

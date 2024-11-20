@@ -8,8 +8,10 @@
 
 package com.algonquin.cst8288.assignment2.event;
 
+// Event creator for WorkshopEvent
 public class WorkshopEventCreator extends EventCreator {
     @Override
+    // Create a WorkshopEvent
     public Event createEvent() {
         return new WorkshopEvent();
     }

@@ -11,6 +11,7 @@ package com.algonquin.cst8288.assignment2.event;
 import com.algonquin.cst8288.assignment2.logger.LMSLogger;
 import com.algonquin.cst8288.assignment2.logger.LogLevel;
 
+// Factory class to create EventCreators
 public class EventFactory {
     private static LMSLogger logger = LMSLogger.getInstance();
 

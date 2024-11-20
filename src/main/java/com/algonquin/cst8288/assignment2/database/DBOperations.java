@@ -30,7 +30,7 @@ public class DBOperations {
 	// CREATE operation: Insert an Event into the database
 	public boolean createEvent(Event event) {
 		String sql = "INSERT INTO events (event_name, event_description, event_activities, admission_fees) VALUES (?, ?, ?, ?)";
-
+		// Insert the Event data into the database
 		try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 			preparedStatement.setString(1, event.getEventName());
 			preparedStatement.setString(2, event.getEventDescription());
@@ -47,11 +47,11 @@ public class DBOperations {
 	// RETRIEVE operation: Fetch an Event from the database by ID
 	public Event getEventById(int eventId) {
 		String sql = "SELECT * FROM events WHERE event_id = ?";
-
+		// Retrieve the Event data from the database
 		try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 			preparedStatement.setInt(1, eventId);
 			ResultSet resultSet = preparedStatement.executeQuery();
-
+			// Check if the result set is not empty
 			if (resultSet.next()) {
 				String name = resultSet.getString("event_name");
 				String description = resultSet.getString("event_description");

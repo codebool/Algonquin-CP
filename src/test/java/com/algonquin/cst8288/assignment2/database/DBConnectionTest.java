@@ -1,14 +1,23 @@
+/**
+ * Student Name: Bo Qu
+ * Lab Professor: Travis Lothar Czech
+ * Due Date: 2024-11-19
+ * Modified: 2024-11-19
+ * Description: Lab assignment 2
+ */
+
 package com.algonquin.cst8288.assignment2.database;
 
 import com.algonquin.cst8288.assignment2.logger.LMSLogger;
 import com.algonquin.cst8288.assignment2.logger.LogLevel;
 import junit.framework.TestCase;
-
 import java.sql.Connection;
 
+// Test class for DBConnection
 public class DBConnectionTest extends TestCase {
     private LMSLogger logger = LMSLogger.getInstance();
 
+    // Test method for getInstance
     public void testGetInstance() {
         logger.log(LogLevel.INFO, "Starting testGetInstance");
         DBConnection instance1 = DBConnection.getInstance();
@@ -18,6 +27,7 @@ public class DBConnectionTest extends TestCase {
         logger.log(LogLevel.INFO, "testGetInstance passed");
     }
 
+    // Test method for getConnection
     public void testGetConnection() {
         logger.log(LogLevel.INFO, "Starting testGetConnection");
         DBConnection instance = DBConnection.getInstance();

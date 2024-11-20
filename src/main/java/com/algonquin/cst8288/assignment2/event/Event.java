@@ -10,8 +10,8 @@ package com.algonquin.cst8288.assignment2.event;
 
 import java.math.BigDecimal;
 
+// Abstract class to represent an Event
 public abstract class Event {
-
 
     protected String eventName;
     protected String eventDescription;
